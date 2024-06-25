@@ -202,7 +202,7 @@
             function simulateLoading() {
                 let loaded = 0;
                 const interval = setInterval(() => {
-                    loaded += Math.random() * 2; // Random increment to simulate loading progress
+                    loaded += Math.random() * 10; // Random increment to simulate loading progress
                     percent.textContent = `${Math.floor(loaded)}%`;
                     progress.style.width = `${loaded}%`;
                     if (loaded >= 100) {
