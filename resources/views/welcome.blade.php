@@ -197,23 +197,8 @@
             const percent = document.getElementById('percent');
             const progress = document.querySelector('#bar .progress');
             const content = document.querySelector('.content');
-
-            let loaded = 0;
-            const interval = setInterval(() => {
-                loaded += Math.random() * 5; // Random increment to simulate loading
-                percent.textContent = `${Math.floor(loaded)}%`;
-                progress.style.width = `${loaded}%`;
-                if (loaded >= 100) {
-                    clearInterval(interval);
-                    loader.style.display = 'none'; // Hide loader after completion
-                    content.classList.add('loaded'); // Add class to trigger animations
-                }
-            }, 100); // Update every 100ms
-        });
-    </script>
-    <script>
-        $(document).ready(function () {
-            $("#team-carousel").owlCarousel({
+            function loadTheScript() {
+                $("#team-carousel").owlCarousel({
                 loop:true,
                 margin:20,
                 nav:true,
@@ -300,7 +285,23 @@
 
             var liEle = [];
             var liEle = $(".tithome div");
+            }
+            let loaded = 0;
+            const interval = setInterval(() => {
+                loaded += Math.random() * 5; // Random increment to simulate loading
+                percent.textContent = `${Math.floor(loaded)}%`;
+                progress.style.width = `${loaded}%`;
+                if (loaded >= 100) {
+                    clearInterval(interval);
+                    loader.style.display = 'none'; // Hide loader after completion
+                    content.classList.add('loaded'); // Add class to trigger animations
+                    loadTheScript();
+                }
+            }, 100); // Update every 100ms
         });
+    </script>
+    <script>
+
     </script>
     @yield('script')
 </body>
