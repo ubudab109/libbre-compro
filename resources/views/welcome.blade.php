@@ -33,7 +33,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
+            /* width: 100vw; */
             height: 100vh;
             background: #000;
             z-index: 9999;
@@ -81,7 +81,7 @@
 </head>
 
 <body>
-    <div id="loader">
+    <div class="container" id="loader">
         <span id="text">
             <img src="{{asset('/assets/img/footer_logo.png')}}" alt="logo_footer.png" width="150">
         </span>
@@ -289,7 +289,7 @@
             }
             let loaded = 0;
             const interval = setInterval(() => {
-                loader.style.width = '100%';
+                // loader.style.width = '100%';
                 loaded += Math.random() * 5; // Random increment to simulate loading
                 percent.textContent = `${Math.floor(loaded)}%`;
                 progress.style.width = `${loaded}%`;
