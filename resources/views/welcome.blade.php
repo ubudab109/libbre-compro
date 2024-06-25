@@ -289,13 +289,13 @@
             }
             let loaded = 0;
             const interval = setInterval(() => {
+                loader.style.width = '100%';
                 loaded += Math.random() * 5; // Random increment to simulate loading
                 percent.textContent = `${Math.floor(loaded)}%`;
                 progress.style.width = `${loaded}%`;
                 if (loaded >= 100) {
                     clearInterval(interval);
                     loader.style.display = 'none'; // Hide loader after completion
-                    loader.style.overflow = 'hidden';
                     content.classList.add('loaded'); // Add class to trigger animations
                     loadTheScript();
                 }
