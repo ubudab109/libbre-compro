@@ -30,7 +30,7 @@
     <style>
         /* Inline critical loader styles to avoid FOUC */
         #loader {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             /* width: 100vw; */
@@ -293,6 +293,9 @@
                 loaded += Math.random() * 5; // Random increment to simulate loading
                 percent.textContent = `${Math.floor(loaded)}%`;
                 progress.style.width = `${loaded}%`;
+                if (loaded <= 1 && loaded >=2) {
+                    loader.style.position = 'absolute';
+                }
                 if (loaded >= 100) {
                     clearInterval(interval);
                     loader.style.display = 'none'; // Hide loader after completion
