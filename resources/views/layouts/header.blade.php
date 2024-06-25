@@ -2,7 +2,7 @@
 <div class="container-fluid sticky-top">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark p-0">
-            <a href="index.html" class="navbar-brand">
+            <a href="#home" class="navbar-brand">
                 {{-- <h1 class="text-white">AI<span class="text-dark">.</span>Tech</h1> --}}
                 <img src="{{asset('assets/img/logo_19218.png')}}" width="140" alt="">
             </a>
