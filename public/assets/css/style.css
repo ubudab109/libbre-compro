@@ -881,6 +881,7 @@ ul.list-check {
 }
 
 /* LOADER */
+
 #loader {
     position: fixed;
     width: 100%;
@@ -893,18 +894,17 @@ ul.list-check {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    /* transition: opacity 0.5s ease; */
 }
 
-#text {
+#text,
+#percent {
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
     color: white;
 }
 
 #percent {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
-    color: white;
     margin-top: 10px;
 }
 
@@ -913,14 +913,12 @@ ul.list-check {
     height: 5px;
     background: #555;
     margin-top: 20px;
-    position: relative;
+    /* position: relative; */
 }
 
-#bar::before {
-    content: '';
-    position: absolute;
+#bar .progress {
     height: 100%;
     width: 0;
-    background: #00FF00;
-    transition: width 0.2s;
+    background: #fff;
+    /* transition: width 0.2s; */
 }

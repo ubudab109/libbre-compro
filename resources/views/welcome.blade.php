@@ -28,65 +28,7 @@
     <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
     <style>
-        @media(max-width: 367px) {
-            .icon-right {
-                padding-top: 13px;
-                position: absolute;
-                top: 10px;
-                z-index: 1;
-                right: 13px;
-            }
-        }
 
-        @media(min-width: 368px) {
-            .icon-right {
-                position: absolute;
-                bottom: 10px;
-                right: 37px;
-                z-index: 1;
-            }
-        }
-
-        #loader {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            background: #1D1D1D;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            /* transition: opacity 0.5s ease; */
-        }
-
-        #text,
-        #percent {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        #percent {
-            margin-top: 10px;
-        }
-
-        #bar {
-            width: 50%;
-            height: 5px;
-            background: #555;
-            margin-top: 20px;
-            position: relative;
-        }
-
-        #bar .progress {
-            height: 100%;
-            width: 0;
-            background: #fff;
-            transition: width 0.2s;
-        }
     </style>
 </head>
 
