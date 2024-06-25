@@ -295,6 +295,7 @@
                 if (loaded >= 100) {
                     clearInterval(interval);
                     loader.style.display = 'none'; // Hide loader after completion
+                    loader.style.overflow = 'hidden';
                     content.classList.add('loaded'); // Add class to trigger animations
                     loadTheScript();
                 }
