@@ -79,7 +79,7 @@
     </style>
 </head>
 
-<body>
+<body style="overflow: hidden;">
     <div id="loader">
         <span id="text">
             <img src="{{asset('/assets/img/footer_logo.png')}}" alt="logo_footer.png" width="150">
@@ -197,6 +197,7 @@
             const percent = document.getElementById('percent');
             const progress = document.querySelector('#bar .progress');
             const content = document.querySelector('.content');
+            // document.body.style.overflow = "hidden";
             function loadTheScript() {
                 $("#team-carousel").owlCarousel({
                     loop:true,
@@ -295,6 +296,8 @@
                     clearInterval(interval);
                     loader.style.display = 'none'; // Hide loader after completion
                     content.classList.add('loaded'); // Add class to trigger animations
+                    document.body.style.overflow = "unset";
+
                     loadTheScript();
                 }
             }, 100); // Update every 100ms
