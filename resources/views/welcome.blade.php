@@ -43,6 +43,7 @@
             flex-direction: column;
             color: white;
             font-size: 2em;
+            overflow: hidden;
         }
 
         #loader img {
