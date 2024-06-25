@@ -198,109 +198,109 @@
             const progress = document.querySelector('#bar .progress');
             const content = document.querySelector('.content');
             document.body.style.overflow = "hidden";
-            function loadTheScript() {
-                $("#team-carousel").owlCarousel({
-                    loop:true,
-                    margin:20,
-                    nav:true,
-                    center: true,
-                    dots: true,
-                    pagination: true,
-                    navigation: true,
-                    responsive:{
-                        0:{
-                            items:1
-                        },
-                        600:{
-                            items:2
-                        },
-                        1000:{
-                            items:3
-                        }
-                    }
-                })
-                $("#serviceCarousel").owlCarousel({
-                    loop:true,
-                    margin:20,
-                    nav:true,
-                    center: true,
-                    dots: true,
-                    pagination: true,
-                    navigation: true,
-                    responsive:{
-                        0:{
-                            items:1
-                        },
-                        600:{
-                            items:2
-                        },
-                        1000:{
-                            items:3
-                        }
-                    }
-                });
+            function simulateLoading() {
+                let loaded = 0;
+                const interval = setInterval(() => {
+                    loaded += Math.random() * 5; // Random increment to simulate loading progress
+                    percent.textContent = `${Math.floor(loaded)}%`;
+                    progress.style.width = `${loaded}%`;
+                    if (loaded >= 100) {
+                        clearInterval(interval);
+                        $("#team-carousel").owlCarousel({
+                            loop:true,
+                            margin:20,
+                            nav:true,
+                            center: true,
+                            dots: true,
+                            pagination: true,
+                            navigation: true,
+                            responsive:{
+                                0:{
+                                    items:1
+                                },
+                                600:{
+                                    items:2
+                                },
+                                1000:{
+                                    items:3
+                                }
+                            }
+                        })
+                        $("#serviceCarousel").owlCarousel({
+                            loop:true,
+                            margin:20,
+                            nav:true,
+                            center: true,
+                            dots: true,
+                            pagination: true,
+                            navigation: true,
+                            responsive:{
+                                0:{
+                                    items:1
+                                },
+                                600:{
+                                    items:2
+                                },
+                                1000:{
+                                    items:3
+                                }
+                            }
+                        });
 
-                $("#portfolioServices").owlCarousel({
-                    loop:true,
-                    margin:20,
-                    nav:true,
-                    dots: true,
-                    center: true,
-                    pagination: true,
-                    navigation: true,
-                    responsive:{
-                        0:{
-                            items:1
-                        },
-                        600:{
-                            items:2
-                        },
-                        1000:{
-                            items:3
-                        }
-                    }
-                });
-            
-                $("#comprehensiveService").owlCarousel({
-                    loop:true,
-                    margin:20,
-                    nav:true,
-                    dots: true,
-                    responsive:{
-                        0:{
-                            items:1
-                        },
-                        600:{
-                            items:1
-                        },
-                        1000:{
-                            items:1
-                        }
-                    }
-                });
-            var elements = $('div.tithome div').length;
+                        $("#portfolioServices").owlCarousel({
+                            loop:true,
+                            margin:20,
+                            nav:true,
+                            dots: true,
+                            center: true,
+                            pagination: true,
+                            navigation: true,
+                            responsive:{
+                                0:{
+                                    items:1
+                                },
+                                600:{
+                                    items:2
+                                },
+                                1000:{
+                                    items:3
+                                }
+                            }
+                        });
+                    
+                        $("#comprehensiveService").owlCarousel({
+                            loop:true,
+                            margin:20,
+                            nav:true,
+                            dots: true,
+                            responsive:{
+                                0:{
+                                    items:1
+                                },
+                                600:{
+                                    items:1
+                                },
+                                1000:{
+                                    items:1
+                                }
+                            }
+                        });
+                        var elements = $('div.tithome div').length;
 
-            for(var i=0;i < elements; i++){
-                $(".tithome").clone().prependTo( ".scorri" );
-            };
+                        for(var i=0;i < elements; i++){
+                            $(".tithome").clone().prependTo( ".scorri" );
+                        };
 
-            var liEle = [];
-            var liEle = $(".tithome div");
+                        var liEle = [];
+                        var liEle = $(".tithome div");
+                        loader.style.display = 'none'; // Hide loader after completion
+                        content.classList.add('loaded'); // Trigger content animation
+                        document.body.style.overflow = "unset"; // Restore overflow once loaded
+                    }
+                }, 100); // Update every 100ms
             }
-            let loaded = 0;
-            const interval = setInterval(() => {
-                loaded += Math.random() * 5; // Random increment to simulate loading
-                percent.textContent = `${Math.floor(loaded)}%`;
-                progress.style.width = `${loaded}%`;
-                if (loaded >= 100) {
-                    clearInterval(interval);
-                    loader.style.display = 'none'; // Hide loader after completion
-                    content.classList.add('loaded'); // Add class to trigger animations
-                    document.body.style.overflow = "unset";
 
-                    loadTheScript();
-                }
-            }, 100); // Update every 100ms
+            simulateLoading();
         });
     </script>
     <script>
