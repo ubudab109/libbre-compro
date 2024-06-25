@@ -79,7 +79,7 @@
     </style>
 </head>
 
-<body style="overflow: hidden;">
+<body>
     <div id="loader">
         <span id="text">
             <img src="{{asset('/assets/img/footer_logo.png')}}" alt="logo_footer.png" width="150">
@@ -197,7 +197,7 @@
             const percent = document.getElementById('percent');
             const progress = document.querySelector('#bar .progress');
             const content = document.querySelector('.content');
-            // document.body.style.overflow = "hidden";
+            document.body.style.overflow = "hidden";
             function loadTheScript() {
                 $("#team-carousel").owlCarousel({
                     loop:true,
