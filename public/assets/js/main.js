@@ -8,7 +8,7 @@
 
         let loaded = 0;
         const interval = setInterval(() => {
-            loaded += Math.random() * 5; // Random increment to simulate loading
+            loaded += Math.random() * 2; // Random increment to simulate loading
             percent.textContent = `${Math.floor(loaded)}%`;
             progress.style.width = `${loaded}%`;
             if (loaded >= 100) {
@@ -16,7 +16,7 @@
                 loader.style.display = 'none'; // Hide loader after completion
                 content.classList.add('loaded'); // Add class to trigger animations
             }
-        }, 100); // Update every 100ms
+        }, 10); // Update every 100ms
     });
     // Spinner
     var spinner = function () {
