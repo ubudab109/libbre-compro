@@ -197,7 +197,7 @@
             const percent = document.getElementById('percent');
             const progress = document.querySelector('#bar .progress');
             const content = document.querySelector('.content');
-            document.body.style.overflow = "hidden";
+            // document.body.style.overflow = "hidden";
             function simulateLoading() {
                 let loaded = 0;
                 const interval = setInterval(() => {
