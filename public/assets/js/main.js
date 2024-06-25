@@ -1,6 +1,23 @@
 (function ($) {
     "use strict";
+    document.addEventListener("DOMContentLoaded", function () {
+        const loader = document.getElementById('loader');
+        const percent = document.getElementById('percent');
+        const progress = document.querySelector('#bar .progress');
+        const content = document.querySelector('.content');
 
+        let loaded = 0;
+        const interval = setInterval(() => {
+            loaded += Math.random() * 5; // Random increment to simulate loading
+            percent.textContent = `${Math.floor(loaded)}%`;
+            progress.style.width = `${loaded}%`;
+            if (loaded >= 100) {
+                clearInterval(interval);
+                loader.style.display = 'none'; // Hide loader after completion
+                content.classList.add('loaded'); // Add class to trigger animations
+            }
+        }, 100); // Update every 100ms
+    });
     // Spinner
     var spinner = function () {
         setTimeout(function () {
@@ -61,5 +78,94 @@
         ]
     });
     
+    $(document).ready(function () {
+        $("#team-carousel").owlCarousel({
+            loop:true,
+            margin:20,
+            nav:true,
+            center: true,
+            dots: true,
+            pagination: true,
+            navigation: true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:2
+                },
+                1000:{
+                    items:3
+                }
+            }
+        })
+        $("#serviceCarousel").owlCarousel({
+            loop:true,
+            margin:20,
+            nav:true,
+            center: true,
+            dots: true,
+            pagination: true,
+            navigation: true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:2
+                },
+                1000:{
+                    items:3
+                }
+            }
+        });
+
+        $("#portfolioServices").owlCarousel({
+            loop:true,
+            margin:20,
+            nav:true,
+            dots: true,
+            center: true,
+            pagination: true,
+            navigation: true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:2
+                },
+                1000:{
+                    items:3
+                }
+            }
+        });
+        
+        $("#comprehensiveService").owlCarousel({
+            loop:true,
+            margin:20,
+            nav:true,
+            dots: true,
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:1
+                },
+                1000:{
+                    items:1
+                }
+            }
+        });
+        var elements = $('div.tithome div').length;
+
+        for(var i=0;i < elements; i++){
+            $(".tithome").clone().prependTo( ".scorri" );
+        };
+
+        var liEle = [];
+        var liEle = $(".tithome div");
+    });
 })(jQuery);
 

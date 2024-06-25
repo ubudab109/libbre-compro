@@ -879,46 +879,51 @@ ul.list-check {
     color: white;
     margin-right: 10px;
 }
-
-/* LOADER */
-
+/* Inline critical loader styles to avoid FOUC */
 #loader {
     position: fixed;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
-    background: #1D1D1D;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
     z-index: 9999;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* transition: opacity 0.5s ease; */
-}
-
-#text,
-#percent {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
+    flex-direction: column;
     color: white;
+    font-size: 2em;
+}
+
+#loader img {
+    max-width: 200px;
+    margin-bottom: 20px;
 }
 
 #percent {
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #bar {
-    width: 50%;
-    height: 5px;
-    background: #555;
-    margin-top: 20px;
-    /* position: relative; */
+    width: 80%;
+    height: 10px;
+    background: #1D1D1D;
 }
 
 #bar .progress {
     height: 100%;
     width: 0;
     background: #fff;
-    /* transition: width 0.2s; */
+}
+
+.content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.content.loaded {
+    opacity: 1;
+    transform: translateY(0);
 }
