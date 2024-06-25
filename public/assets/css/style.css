@@ -4,7 +4,7 @@
 
 body {
     background-color: #000000 !important;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 .pt-6 {
