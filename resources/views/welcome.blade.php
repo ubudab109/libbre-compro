@@ -191,7 +191,7 @@
 
     <!-- Template Javascript -->
     <script src="{{asset('assets/js/main.js')}}"></script>
-    {{-- <script>
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
             const loader = document.getElementById('loader');
             const percent = document.getElementById('percent');
@@ -301,7 +301,7 @@
             var liEle = [];
             var liEle = $(".tithome div");
         });
-    </script> --}}
+    </script>
     @yield('script')
 </body>
 
