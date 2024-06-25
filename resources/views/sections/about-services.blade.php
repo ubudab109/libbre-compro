@@ -1,4 +1,4 @@
-<div class="container" style="background-color: #000; padding-top: 40px;">
+<div class="container" style="background-color: #000;">
     <section id="about">
         <div class="row">
             <h5 class="section-title text-center">About Us</h5>
@@ -32,7 +32,7 @@
         </div>
     </section>
 
-    <section id="services" style="margin-top: 20px;">
+    <section id="services" style="margin-top: 100px;">
         <div class="row">
             <h5 class="section-title text-center">Services</h5>
             <div class="underline"></div>

@@ -33,7 +33,7 @@
 
 
 <!-- Hero Start -->
-<div class="container-fluid hero-header mb-5">
+<div class="container-fluid hero-header">
     <div class="container">
         <section id="home">
             <div class="row mb-5 hero-row">

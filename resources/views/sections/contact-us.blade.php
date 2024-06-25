@@ -1,4 +1,4 @@
-<div class="container mt-5" style="padding-top: 40px;">
+<div class="container mt-5">
     <section id="contactUs">
         <div class="row p-5">
             <div class="col-lg-6 col-md-12">

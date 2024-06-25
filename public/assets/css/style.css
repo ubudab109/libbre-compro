@@ -426,7 +426,7 @@ h6,
 /* SECTION */
 
 section .row {
-    margin-top: 100px;
+    margin-top: 0px;
 }
 
 .section-title {
@@ -847,7 +847,7 @@ ul.list-check {
 
 .img-hero-banner {
     position: relative;
-    top: -62px;
+    top: -61px;
     z-index: -1;
 }
 
