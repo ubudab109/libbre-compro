@@ -33,7 +33,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
+            width: 100%;
             height: 100vh;
             background: #000;
             z-index: 9999;
@@ -199,84 +199,84 @@
             const content = document.querySelector('.content');
             function loadTheScript() {
                 $("#team-carousel").owlCarousel({
-                loop:true,
-                margin:20,
-                nav:true,
-                center: true,
-                dots: true,
-                pagination: true,
-                navigation: true,
-                responsive:{
-                    0:{
-                        items:1
-                    },
-                    600:{
-                        items:2
-                    },
-                    1000:{
-                        items:3
+                    loop:true,
+                    margin:20,
+                    nav:true,
+                    center: true,
+                    dots: true,
+                    pagination: true,
+                    navigation: true,
+                    responsive:{
+                        0:{
+                            items:1
+                        },
+                        600:{
+                            items:2
+                        },
+                        1000:{
+                            items:3
+                        }
                     }
-                }
-            })
-            $("#serviceCarousel").owlCarousel({
-                loop:true,
-                margin:20,
-                nav:true,
-                center: true,
-                dots: true,
-                pagination: true,
-                navigation: true,
-                responsive:{
-                    0:{
-                        items:1
-                    },
-                    600:{
-                        items:2
-                    },
-                    1000:{
-                        items:3
+                })
+                $("#serviceCarousel").owlCarousel({
+                    loop:true,
+                    margin:20,
+                    nav:true,
+                    center: true,
+                    dots: true,
+                    pagination: true,
+                    navigation: true,
+                    responsive:{
+                        0:{
+                            items:1
+                        },
+                        600:{
+                            items:2
+                        },
+                        1000:{
+                            items:3
+                        }
                     }
-                }
-            });
+                });
 
-            $("#portfolioServices").owlCarousel({
-                loop:true,
-                margin:20,
-                nav:true,
-                dots: true,
-                center: true,
-                pagination: true,
-                navigation: true,
-                responsive:{
-                    0:{
-                        items:1
-                    },
-                    600:{
-                        items:2
-                    },
-                    1000:{
-                        items:3
+                $("#portfolioServices").owlCarousel({
+                    loop:true,
+                    margin:20,
+                    nav:true,
+                    dots: true,
+                    center: true,
+                    pagination: true,
+                    navigation: true,
+                    responsive:{
+                        0:{
+                            items:1
+                        },
+                        600:{
+                            items:2
+                        },
+                        1000:{
+                            items:3
+                        }
                     }
-                }
-            });
+                });
             
-            $("#comprehensiveService").owlCarousel({
-                loop:true,
-                margin:20,
-                nav:true,
-                dots: true,
-                responsive:{
-                    0:{
-                        items:1
-                    },
-                    600:{
-                        items:1
-                    },
-                    1000:{
-                        items:1
+                $("#comprehensiveService").owlCarousel({
+                    loop:true,
+                    margin:20,
+                    nav:true,
+                    dots: true,
+                    responsive:{
+                        0:{
+                            items:1
+                        },
+                        600:{
+                            items:1
+                        },
+                        1000:{
+                            items:1
+                        }
                     }
-                }
-            });
+                });
             var elements = $('div.tithome div').length;
 
             for(var i=0;i < elements; i++){
