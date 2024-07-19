@@ -64,7 +64,7 @@
         <div class="col-12 text-center">
             <div class="cont">
                 <div class="scorri">
-                    <div class="tithome d-flex px-5" style="justify-content: space-evenly;">
+                    <div class="tithome d-flex px-5" style="justify-content: space-between;">
                         <div class="text-marque text-orange">
                             Food N beverage
                         </div>
@@ -82,15 +82,15 @@
                         </div>
                         <div class="text-marque icon mt-2 text-orange">
                         </div>
-
                         <div class="text-marque text-orange">
                             Innovation
                         </div>
                         <div class="text-marque icon mt-2 text-orange">
                         </div>
-
                         <div class="text-marque text-orange">
                             Integrate
+                        </div>
+                        <div class="text-marque icon mt-2 text-orange">
                         </div>
                     </div>
                 </div>
