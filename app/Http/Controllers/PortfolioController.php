@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PaginationResource;
 use App\Models\Portfolio;
 use App\Traits\FileTrait;
 use Illuminate\Http\Request;
@@ -13,24 +14,39 @@ class PortfolioController extends Controller
 {
     use FileTrait;
 
-    public function index()
+    public function index(Request $request)
     {
-        $portfolio = Portfolio::select('id', 'uuid', 'title', 'sub_title', 'description', 'images')->get();
-        return response()->json($portfolio, 200);
+        $portfolio = Portfolio::select('id', 'uuid', 'title', 'sub_title', 'description', 'images')
+        ->when($request->has('keyword') && !empty($request->keyword), function ($query) use ($request) {
+            $query->where('title', 'LIKE', '%'. $request->keyword .'%')
+            ->orWhere('sub_title', 'LIKE', '%'. $request->keyword .'%')
+            ->orWhere('description', 'LIKE', '%'. $request->keyword .'%');
+        })
+        ->paginate($request->show ?? 10);
+        $resource = new PaginationResource($portfolio);
+        return response()->json([
+            'error' => false,
+            'message' => 'Data Fetched Successfully',
+            'data' => $resource,
+        ], 200);
     }
 
     public function store(Request $request)
     {
-        Log::info($request->all());
         $validator = Validator::make($request->all(), [
             'title' => ['required'],
             'description' => ['required'],
             'images' => ['array'],
             'images.*' => ['mimes:jpg,png,jpeg', 'max:2048']
         ]);
-
+        Log::info($request->all());
+        Log::info('ASFDASD', [$request->files]);
         if ($validator->fails()) {
-            return response()->json($validator->errors()->all(), 422);
+            return response()->json([
+                'error' => true,
+                'message' => $validator->errors()->all(),
+                'data' => null,
+            ], 422);
         }
 
         DB::beginTransaction();
@@ -39,7 +55,6 @@ class PortfolioController extends Controller
             if ($request->has('images')) {
                 $encodedImage = [];
                 $images = $request->images;
-                Log::info($images);
                 foreach ($images as $image) {
                     $storeFile = $this->storeFile('portfolio/', $image);
                     $encodedImage[] = $storeFile;
@@ -48,17 +63,30 @@ class PortfolioController extends Controller
             }
             $portfolio = Portfolio::create($input);
             DB::commit();
-            return response()->json($portfolio, 201);
+            return response()->json([
+                'error' => false,
+                'message' => 'Data created successfully',
+                'data' => $portfolio,
+            ], 201);
         } catch (\Exception $err) {
             DB::rollBack();
-            return response()->json($err->getMessage(), 500);
+            return response()->json([
+                'error' => false,
+                'message' => $err->getMessage(),
+                'data' => null,
+            ], 500);
         }
     }
 
     public function show(string $uuid)
     {
         $portfolio = Portfolio::where('uuid', $uuid)->first();
-        return response()->json($portfolio, 200);
+        $portfolio->images = json_decode($portfolio->images);
+        return response()->json([
+            'error' => false,
+            'message' => 'Data fetched successfully',
+            'data' => $portfolio,
+        ], 200);
     }
 
     public function update(Request $request, string $uuid)
@@ -67,34 +95,47 @@ class PortfolioController extends Controller
             'title' => ['required'],
             'description' => ['required'],
             'images' => ['array'],
-            'images.*' => ['mimes:jpg,png,jpeg', 'max:2048']
+            'images.*' => ['mimes:jpg,png,jpeg', 'max:2048'],
+            'old_images' => ['array'],
         ]);
 
         if ($validator->fails()) {
-            return response()->json($validator->errors()->all(), 422);
+            return response()->json([
+                'error' => true,
+                'message' => $validator->errors()->all(),
+                'data' => null,
+            ], 422);
         }
 
         DB::beginTransaction();
         try {
             $input = $request->all();
             $portfolio = Portfolio::where('uuid', $uuid)->first();
+            $encodedImage = [];
             if ($request->has('images')) {
-                $encodedImage = [];
                 $images = $request->images;
                 foreach ($images as $image) {
                     $this->deleteFile($image);
                     $storeFile = $this->storeFile('portfolio', $image);
                     $encodedImage[] = $storeFile;
                 }
-                $input['images'] = json_encode($encodedImage);
             }
+            $input['images'] = json_encode(array_merge($encodedImage, $request->old_images ?? []));
             $portfolio->update($input);
             $newData = Portfolio::where('uuid', $uuid)->first();
             DB::commit();
-            return response()->json($newData, 201);
+            return response()->json([
+                'error' => false,
+                'message' => 'Data updated succesfully',
+                'data' => $newData
+            ], 201);
         } catch (\Exception $err) {
             DB::rollBack();
-            return response()->json($err->getMessage(), 500);
+            return response()->json([
+                'error' => true,
+                'message' => $err->getMessage(),
+                'data' => null,
+            ], 500);
         }
     }
 

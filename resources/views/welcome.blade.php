@@ -307,9 +307,9 @@
                             margin: 10,
                             nav: true,
                             dots: true,
-                            autoplay: true,
-                            autoplayTimeout: 1000,
-                            autoplayHoverPause: true,
+                            // autoplay: false,
+                            // autoplayTimeout: 1000,
+                            // autoplayHoverPause: true,
                             responsive:{
                                 0:{
                                     items:1

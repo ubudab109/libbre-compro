@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PortfolioController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -15,4 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('portfolio', PortfolioController::class);
+Route::post('login', [AuthController::class, 'login']);
+Route::group(['middleware' => 'auth:sanctum:users'], function () {
+    Route::get('validate-token', [AuthController::class, 'validateToken']);
+    Route::post('logout', [AuthController::class, 'logout']);
+    Route::resource('portfolio', PortfolioController::class);
+});

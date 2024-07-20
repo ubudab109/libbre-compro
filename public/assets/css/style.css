@@ -1084,17 +1084,6 @@ ul.list-check {
     background: rgba(0, 0, 0, 0) url('/assets/img/svg/close-svgrepo-com.svg') center / 1em auto no-repeat;
 }
 
-/* .modal.fade .modal-dialog {
-    transition: transform 0.3s ease-in;
-    transform: translate(0, -50px);
-}
-@media (prefers-reduced-motion: reduce) {
-    .modal.fade .modal-dialog {
-        transition: none;
-    }
-} */
-
-
 /* BOTTOM RIGHT AND LEFT CORNER */
 .tooltip-container {
     position: relative;

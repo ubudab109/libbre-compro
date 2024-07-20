@@ -31,4 +31,8 @@ class Portfolio extends Model
         'start_date',
         'end_date',
     ];
+
+    protected $casts = [
+        'images' => 'array'
+    ];
 }

@@ -7,20 +7,19 @@
         </div>
         <div class="row mt-5">
             <div class="owl-carousel owl-theme mt-3 mb-3" id="portfolioServices">
-                @for ($i = 0; $i < 6; $i++) 
-                    <div class="item">
-                        <div class="card card-portfolio">
-                            <img src="{{asset('/assets/img/portfolio1_lg.jpg')}}" class="card-img-top" alt="banner.jpg">
-                            <div class="card-body text-white py-4">
-                                <h5 class="card-title text-white">Lorem Ipsum</h5>
-                                <p class="card-text mt-3" style="font-weight: 300;">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's
-                                </p>
-                            </div>
+                @foreach ($portfolios as $item)
+                <div class="item">
+                    <div class="card card-portfolio">
+                        <img src="{{json_decode($item['images'])[0]}}" class="card-img-top" alt="banner.jpg">
+                        <div class="card-body text-white py-4">
+                            <h5 class="card-title text-white">{{$item['title']}}</h5>
+                            <p class="card-text mt-3" style="font-weight: 300;">
+                                {{$item['description']}}
+                            </p>
                         </div>
                     </div>
-                @endfor
+                </div>
+                @endforeach
             </div>
         </div>
     </section>
