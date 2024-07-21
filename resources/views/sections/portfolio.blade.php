@@ -14,7 +14,11 @@
                         <div class="card-body text-white py-4">
                             <h5 class="card-title text-white">{{$item['title']}}</h5>
                             <p class="card-text mt-3" style="font-weight: 300;">
-                                {{$item['description']}}
+                                @if (app()->getLocale() == 'en')
+                                    {{$item['description_en'] ?? $item['description']}}
+                                @else
+                                    {{$item['description']}}
+                                @endif
                             </p>
                         </div>
                     </div>
