@@ -27,10 +27,14 @@ trait FileTrait
     {
         $fileSystem = config('filesystems.default');
         $filePath = parse_url($url, PHP_URL_PATH);
+        // Ensure the path is correctly formed
         $pathFile = str_replace('/storage/', '', $filePath);
+        // Check if the file exists
         $fileExists = Storage::disk($fileSystem)->exists($pathFile);
+
         if ($fileExists) {
-            $isDeleted = Storage::disk($fileSystem)->delete($filePath);
+            // Attempt to delete the file
+            $isDeleted = Storage::disk($fileSystem)->delete($pathFile);
             return $isDeleted;
         } else {
             return false;

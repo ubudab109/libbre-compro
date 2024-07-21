@@ -110,9 +110,9 @@
         </div>
     </div>
 
-    <a target="_blank"
-        href="https://wa.me/62811140172?text=Halo%2C+Saya+ingin+berkonsultasi+mengenai+bisnis+Saya."
-        class="wa-button" style="display: inline-block;"><img src="{{asset('/assets/img/whatsapp.png')}}" alt="" width="55"></a>
+    <a target="_blank" href="https://wa.me/62811140172?text=Halo%2C+Saya+ingin+berkonsultasi+mengenai+bisnis+Saya."
+        class="wa-button" style="display: inline-block;"><img src="{{asset('/assets/img/whatsapp.png')}}" alt=""
+            width="55"></a>
     <audio id="bg-music" autoplay>
         <source src="{{ asset('assets/music/bg_music.mp3') }}" type="audio/mp3">
         Your browser does not support the audio element.
@@ -221,7 +221,8 @@
 
     <!-- Template Javascript -->
     <script src="{{asset('assets/js/main.js')}}"></script>
-    
+    <script src="{{asset('assets/js/sweetalert2.min.js')}}"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const loader = document.getElementById('loader');
@@ -392,6 +393,49 @@
             }
             // Set interval to display the tooltip
             setInterval(showTooltip, 10000);
+        });
+    </script>
+    <script>
+        $("#form-contact").submit(function (e) {
+            e.preventDefault();
+            
+            // Change button text
+            var $button = $(this).find('button[type="submit"]');
+            $button.text('Sending...').prop('disabled', true);
+    
+            // Gather form data
+            var formData = $(this).serialize();
+    
+            // Perform AJAX request
+            $.ajax({
+                url: "{{ route('send.get-in-touch') }}", // Replace with your route if needed
+                type: 'POST',
+                data: formData,
+                success: function(response) {
+                    // On success
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: 'Your message has been sent successfully.',
+                        confirmButtonText: 'OK'
+                    }).then(function() {
+                        // Reset the form
+                        $('#form-contact')[0].reset();
+                        $button.text('@lang('landing.contact_us.button')').prop('disabled', false);
+                    });
+                },
+                error: function(xhr) {
+                    // On error
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong! Please try again later.',
+                        confirmButtonText: 'OK'
+                    }).then(function() {
+                        $button.text('@lang('landing.contact_us.button')').prop('disabled', false);
+                    });
+                }
+            });
         });
     </script>
     @yield('script')

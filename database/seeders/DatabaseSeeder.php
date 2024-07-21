@@ -20,11 +20,15 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        User::create([
+        User::updateOrCreate([
+            'username' => 'admin',
+            'email' => 'admin@mail.com',
+        ],[
             'username' => 'admin',
             'email' => 'admin@mail.com',
             'password' => 'LibbreCreative@024',
             'name' => 'Admin',
         ]);
+        $this->call(CompanySettingSeeder::class);
     }
 }

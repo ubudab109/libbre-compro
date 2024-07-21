@@ -186,9 +186,9 @@ h6,
     background-color: #00bcd4;
     color: white;
     letter-spacing: 1px;
-    height: 40px;
     font-size: 17px;
     border: none;
+    padding: 10px;
     border-radius: 5px;
 }
 

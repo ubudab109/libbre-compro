@@ -8,6 +8,22 @@
         "contact" => "Contact Us",
         "lang" => "Language",
     ],
+    "modal_see_more" => [
+        "desc_one" => "adalah agensi kreatif yang mengkhususkan diri dalam industri",
+        "desc_one_sub" => "Food & Beverage (F&B)",
+        "desc_two" => "yang Berdiri pada tahun 2024, kami menggabungkan kreativitas dan teknologi <b>kecerdasan
+        buatan (AI)",
+        "desc_three" => "untuk membawa inovasi baru dalam industri ini.",
+        "desc_four" => "Kami menawarkan beragam layanan termasuk",
+        "desc_five" => "branding, pemasaran digital, pengembangan web, dan produksi media",
+        "desc_six" => "Dengan pendekatan holistik dan berbasis teknologi terkini, kami bertujuan untuk menjadi mitra
+        strategis yang membantu pelaku bisnis dalam industri F&B mencapai tujuan mereka.",
+        "desc_seven" => "juga menyediakan",
+        "desc_eight" => "layanan konsultan bisnis",
+        "desc_nine" => "yang komprehensif, dirancang khusus untuk memenuhi kebutuhan unik",
+        "desc_ten" => "industri F&B",
+        "desc_eleven" => "Dengan fokus pada inovasi dan kualitas, kami siap memberikan solusi yang sesuai dengan tantangan yang dihadapi oleh klien-klien kami."
+    ],
     "about_us" => [
         "title" => "About Us",
         "desc_one" => "We Bring Creative Integration to the F&B industry",

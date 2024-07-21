@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\CompanySetting;
 use App\Models\Portfolio;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['middleware' => ['lang']], function () {
     Route::get('/', function () {
         $data['portfolios'] = Portfolio::all();
+        $data['compro'] = CompanySetting::where('slug', 'compro_file')->first();
         return view('welcome', $data);
     })->name('home');
 });

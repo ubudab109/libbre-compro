@@ -1,4 +1,4 @@
-<x-flip-bounce-modal id="branding-service-modal" title="Branding Services">
+<x-flip-bounce-modal id="branding-service-modal" title="landing.services.data.branding">
     <div class="card bg-dark">
         <div class="card-body">
             <ul class="list-check text-white">
@@ -53,7 +53,7 @@
     </div>
 </x-flip-bounce-modal>
 
-<x-flip-bounce-modal id="website-service-modal" title="Website Services">
+<x-flip-bounce-modal id="website-service-modal" title="landing.services.data.web_development">
     <div class="card bg-dark">
         <div class="card-body">
             <ul class="list-check text-white">
@@ -118,7 +118,7 @@
     </div>
 </x-flip-bounce-modal>
 
-<x-flip-bounce-modal id="digital-service-modal" title="Digital Marketing Services">
+<x-flip-bounce-modal id="digital-service-modal" title="landing.services.data.digital_marketing">
     <div class="card bg-dark">
         <div class="card-body">
             <ul class="list-check text-white">
@@ -127,7 +127,7 @@
                     <ul style="list-style: none">
                         <li>
                             @lang('landing.services.data.modal.digital_marketing_strategy.desc')
-                            
+
                         </li>
                     </ul>
                 </li>
@@ -196,7 +196,7 @@
     </div>
 </x-flip-bounce-modal>
 
-<x-flip-bounce-modal id="media-service-modal" title="Media Production Services">
+<x-flip-bounce-modal id="media-service-modal" title="landing.services.data.media_production">
     <div class="card bg-dark">
         <div class="card-body">
             <ul class="list-check text-white">
@@ -253,7 +253,7 @@
     </div>
 </x-flip-bounce-modal>
 
-<x-flip-bounce-modal id="fnb-service-modal" title="FnB Consultant Business">
+<x-flip-bounce-modal id="fnb-service-modal" title="landing.services.data.fnb">
     <div class="card bg-dark">
         <div class="card-body">
             <ul class="list-check text-white">
@@ -342,3 +342,54 @@
     </div>
 </x-flip-bounce-modal>
 
+<x-flip-bounce-modal id="seeMore" title="landing.about_us.title">
+    <div class="card bg-dark">
+        <div class="card-body">
+            <p class="text-white paragraph-title mb-4 animated slideInRight text-center">
+                <b>Libbre Creative Integrate</b> @lang('landing.modal_see_more.desc_one')<b>
+                    @lang('landing.modal_see_more.desc_one_sub')</b> @lang('landing.modal_see_more.desc_two')</b>
+                @lang('landing.modal_see_more.desc_three')
+            </p>
+            <p class="text-white paragraph-title mb-4 animated slideInRight text-center">
+                @lang('landing.modal_see_more.desc_four')
+                <b>@lang('landing.modal_see_more.desc_five')</b>.@lang('landing.modal_see_more.desc_six')
+            </p>
+            <p class="text-white paragraph-title mb-4 animated slideInRight text-center">
+                <b>Libbre</b> @lang('landing.modal_see_more.desc_seven')
+                <b>@lang('landing.modal_see_more.desc_eight')</b> @lang('landing.modal_see_more.desc_nine')
+                <b>@lang('landing.modal_see_more.desc_ten')</b>. @lang('landing.modal_see_more.desc_eleven')
+            </p>
+            <div class="d-flex flex-wrap">
+                <div class="col-lg-6 col-md-12 mb-3 text-center">
+                    <div class="card bg-dark h-100 border-0">
+                        <div class="card-body">
+                            <div class="row py-2">
+                                <h5 class="section-title text-center">Visi</h5>
+                                <div class="underline"></div>
+                            </div>
+                            <p>
+                                Mendukung dan mengembangkan serta memberikan inovasi kreatif dan teknologi terhadap
+                                industri Food & Beverage, dengan tujuan untuk membentuk sebuah ekosistem yang
+                                memungkinkan pertumbuhan bagi industri F&B di Indonesia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 text-center">
+                    <div class="card bg-dark h-100 border-0">
+                        <div class="card-body">
+                            <div class="row py-2">
+                                <h5 class="section-title text-center">Misi</h5>
+                                <div class="underline"></div>
+                            </div>
+                            <p>
+                                Menjadi mitra strategis bagi para pelaku bisnis FnB, membantu mereka meraih kesuksesan dengan mengintegrasikan kreativitas dan teknologi kecerdasan buatan. Kami bertujuan untuk tidak hanya mengikuti tren, tetapi juga mendorong perkembangan industri FnB dengan solusi inovatif.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</x-flip-bounce-modal>

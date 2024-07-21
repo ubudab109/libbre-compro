@@ -12,6 +12,22 @@ return [
         "contact" => "Kontak Kami",
         "lang" => "Bahasa",
     ],
+    "modal_see_more" => [
+        "desc_one" => "adalah agensi kreatif yang mengkhususkan diri dalam industri",
+        "desc_one_sub" => "Food & Beverage (F&B)",
+        "desc_two" => "yang Berdiri pada tahun 2024, kami menggabungkan kreativitas dan teknologi <b>kecerdasan
+        buatan (AI)",
+        "desc_three" => "untuk membawa inovasi baru dalam industri ini.",
+        "desc_four" => "Kami menawarkan beragam layanan termasuk",
+        "desc_five" => "branding, pemasaran digital, pengembangan web, dan produksi media",
+        "desc_six" => "Dengan pendekatan holistik dan berbasis teknologi terkini, kami bertujuan untuk menjadi mitra
+        strategis yang membantu pelaku bisnis dalam industri F&B mencapai tujuan mereka.",
+        "desc_seven" => "juga menyediakan",
+        "desc_eight" => "layanan konsultan bisnis",
+        "desc_nine" => "yang komprehensif, dirancang khusus untuk memenuhi kebutuhan unik",
+        "desc_ten" => "industri F&B",
+        "desc_eleven" => "Dengan fokus pada inovasi dan kualitas, kami siap memberikan solusi yang sesuai dengan tantangan yang dihadapi oleh klien-klien kami."
+    ],
     "about_us" => [
         "title" => "Tentang Kami",
         "desc_one" => "Kami Membawa Integrasi Kreatif ke Industri F&B",
@@ -19,7 +35,7 @@ return [
         "desc_two" => "adalah agensi kreatif yang menggabungkan kreativitas dan inovasi teknologi di industri Makanan & Minuman di Indonesia. Didirikan pada tahun 2023, kami menawarkan",
         "desc_three" => "layanan branding, pemasaran digital, pengembangan web, dan produksi media, serta bertindak sebagai konsultan bisnis dan pengembang perangkat lunak",
         "desc_four" => "Di balik layanan kami, terdapat semangat inovasi yang membimbing langkah kami. Kami tidak hanya mengikuti tren, tetapi juga mendorongnya.",
-        "see_more" => "Lihat Selengkapnya",
+        "see_more" => "Selengkapnya",
     ],
     "services" => [
         "title" => "Layanan",

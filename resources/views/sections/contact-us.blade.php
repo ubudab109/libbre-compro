@@ -52,18 +52,18 @@
             <div class="col-lg-6 col-md-12">
                 <div class="card">
                     <div class="card-body p-4">
-                        <form action="">
+                        <form id="form-contact" method="POST">
                             <div class="form-group my-3">
                                 <label for="">@lang('landing.contact_us.input_name')</label>
-                                <input type="text" name="name" id="" class="form-control">
+                                <input required type="text" name="fullname" id="" class="form-control">
                             </div>
                             <div class="form-group my-3">
                                 <label for="">@lang('landing.contact_us.input_mail')</label>
-                                <input type="email" name="email" id="" class="form-control">
+                                <input required type="email" name="email" id="" class="form-control">
                             </div>
                             <div class="form-group my-3">
                                 <label for="">@lang('landing.contact_us.input_message')</label>
-                                <textarea name="message" id="" cols="30" rows="10" class="form-control"></textarea>
+                                <textarea required name="message" id="" cols="30" rows="10" class="form-control"></textarea>
                             </div>
                             <div class="text-center">
                                 <button class="btn-primary-custom" type="submit">@lang('landing.contact_us.button')</button>

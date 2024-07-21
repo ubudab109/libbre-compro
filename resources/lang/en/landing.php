@@ -12,6 +12,20 @@ return [
         "contact" => "Contact Us",
         "lang" => "Language",
     ],
+    "modal_see_more" => [
+        "desc_one" => "is a creative agency specializing in the",
+        "desc_one_sub" => "Food & Beverage (F&B) industry.",
+        "desc_two" => "Established in 2024, we blend creativity with <b>artificial intelligence (AI)</b>",
+        "desc_three" => "to bring new innovations to the industry.",
+        "desc_four" => "We offer a diverse range of services, including",
+        "desc_five" => "branding, digital marketing, web development, and media production.",
+        "desc_six" => "With a holistic approach and cutting-edge technology, we aim to be a strategic partner that helps businesses in the F&B sector achieve their goals.",
+        "desc_seven" => "We also provide",
+        "desc_eight" => "comprehensive business consulting services",
+        "desc_nine" => "tailored specifically to meet the unique needs of the",
+        "desc_ten" => "F&B industry.",
+        "desc_eleven" => "Focusing on innovation and quality, we are dedicated to delivering solutions that address the challenges faced by our clients."
+    ],  
     "about_us" => [
         "title" => "About Us",
         "desc_one" => "We Bring Creative Integration to the F&B industry",
