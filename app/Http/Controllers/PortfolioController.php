@@ -16,12 +16,13 @@ class PortfolioController extends Controller
 
     public function index(Request $request)
     {
-        $portfolio = Portfolio::select('id', 'uuid', 'title', 'sub_title', 'description', 'images')
+        $portfolio = Portfolio::select('id', 'uuid', 'title', 'sub_title', 'description', 'description_en', 'images')
         ->when($request->has('keyword') && !empty($request->keyword), function ($query) use ($request) {
             $query->where('title', 'LIKE', '%'. $request->keyword .'%')
             ->orWhere('sub_title', 'LIKE', '%'. $request->keyword .'%')
             ->orWhere('description', 'LIKE', '%'. $request->keyword .'%');
         })
+        ->orderBy('id', 'desc')
         ->paginate($request->show ?? 10);
         $resource = new PaginationResource($portfolio);
         return response()->json([
@@ -36,11 +37,10 @@ class PortfolioController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => ['required'],
             'description' => ['required'],
+            'description_en' => ['required'],
             'images' => ['array'],
             'images.*' => ['mimes:jpg,png,jpeg', 'max:2048']
         ]);
-        Log::info($request->all());
-        Log::info('ASFDASD', [$request->files]);
         if ($validator->fails()) {
             return response()->json([
                 'error' => true,
@@ -94,6 +94,7 @@ class PortfolioController extends Controller
         $validator = Validator::make($request->all(), [
             'title' => ['required'],
             'description' => ['required'],
+            'description_en' => ['required'],
             'images' => ['array'],
             'images.*' => ['mimes:jpg,png,jpeg', 'max:2048'],
             'old_images' => ['array'],

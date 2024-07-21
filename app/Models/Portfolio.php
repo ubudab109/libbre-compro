@@ -25,6 +25,7 @@ class Portfolio extends Model
         'title',
         'sub_title',
         'description',
+        'description_en',
         'demo_url',
         'client',
         'images',
