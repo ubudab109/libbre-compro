@@ -81,6 +81,14 @@
             transform: translateY(0);
         }
     </style>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H5PRL106R3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-H5PRL106R3');
+    </script>
 </head>
 
 <body>
@@ -213,14 +221,7 @@
 
     <!-- Template Javascript -->
     <script src="{{asset('assets/js/main.js')}}"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H5PRL106R3"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-H5PRL106R3');
-    </script>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const loader = document.getElementById('loader');
