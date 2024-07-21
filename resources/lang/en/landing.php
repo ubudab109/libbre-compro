@@ -24,7 +24,9 @@ return [
         "desc_eight" => "comprehensive business consulting services",
         "desc_nine" => "tailored specifically to meet the unique needs of the",
         "desc_ten" => "F&B industry.",
-        "desc_eleven" => "Focusing on innovation and quality, we are dedicated to delivering solutions that address the challenges faced by our clients."
+        "desc_eleven" => "Focusing on innovation and quality, we are dedicated to delivering solutions that address the challenges faced by our clients.",
+        "vision" => "Supporting, developing and providing creative and technological innovation to the Food & Beverage industry, with the aim of forming an ecosystem that enables growth for the F&B industry in Indonesia.",
+        "mission" => "Become a strategic partner for FnB business players, helping them achieve success by integrating creativity and artificial intelligence technology. We aim to not only keep up with trends, but also drive the development of the FnB industry with innovative solutions.",
     ],  
     "about_us" => [
         "title" => "About Us",

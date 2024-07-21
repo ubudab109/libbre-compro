@@ -26,7 +26,9 @@ return [
         "desc_eight" => "layanan konsultan bisnis",
         "desc_nine" => "yang komprehensif, dirancang khusus untuk memenuhi kebutuhan unik",
         "desc_ten" => "industri F&B",
-        "desc_eleven" => "Dengan fokus pada inovasi dan kualitas, kami siap memberikan solusi yang sesuai dengan tantangan yang dihadapi oleh klien-klien kami."
+        "desc_eleven" => "Dengan fokus pada inovasi dan kualitas, kami siap memberikan solusi yang sesuai dengan tantangan yang dihadapi oleh klien-klien kami.",
+        "vision" => "Mendukung dan mengembangkan serta memberikan inovasi kreatif dan teknologi terhadap industri Food & Beverage, dengan tujuan untuk membentuk sebuah ekosistem yang memungkinkan pertumbuhan bagi industri F&B di Indonesia.",
+        "mission" => "Menjadi mitra strategis bagi para pelaku bisnis FnB, membantu mereka meraih kesuksesan dengan mengintegrasikan kreativitas dan teknologi kecerdasan buatan. Kami bertujuan untuk tidak hanya mengikuti tren, tetapi juga mendorong perkembangan industri FnB dengan solusi inovatif.",
     ],
     "about_us" => [
         "title" => "Tentang Kami",
