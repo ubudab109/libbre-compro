@@ -91,7 +91,6 @@ class EmailController extends Controller
                 'message' => $request->message,
                 'file' => $setting->value,
             ];
-            EmailJob::dispatch(SendCompanyProfileMail::class, $data);
             try {
                 DB::table('emails')->insert([
                     'type' => 'Company Profile Document',
@@ -103,6 +102,8 @@ class EmailController extends Controller
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ]);
+                EmailJob::dispatch(SendCompanyProfileMail::class, $data);
+
                 DB::commit();
             } catch (\Exception $err) {
                 Log::info($err->getMessage());
