@@ -102,7 +102,7 @@ class EmailController extends Controller
                     'created_at' => Carbon::now(),
                     'updated_at' => Carbon::now(),
                 ]);
-                EmailJob::dispatch(SendCompanyProfileMail::class, $data);
+                // EmailJob::dispatch(SendCompanyProfileMail::class, $data);
 
                 DB::commit();
             } catch (\Exception $err) {
