@@ -1130,3 +1130,24 @@ ul.list-check {
     transition: transform 0.5s linear;
     visibility: hidden;
 }
+
+.wa-button {
+    font-size: 20px;
+    color: #fff;
+    position: fixed;
+    right: 7px;
+    bottom: 52px;
+    width: 70px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 5px;
+    /* background-color: #0067f4; */
+    text-align: center;
+    z-index: 99;
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+    display: none;
+}

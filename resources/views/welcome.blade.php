@@ -101,6 +101,10 @@
         <div class="tooltip" id="tooltip" style="opacity: 1; visibility: hidden;">Feel lonely? Please play this music
         </div>
     </div>
+
+    <a target="_blank"
+        href="https://wa.me/62811140172?text=Halo%2C+Saya+ingin+berkonsultasi+mengenai+bisnis+Saya."
+        class="wa-button" style="display: inline-block;"><img src="{{asset('/assets/img/whatsapp.png')}}" alt="" width="55"></a>
     <audio id="bg-music" autoplay>
         <source src="{{ asset('assets/music/bg_music.mp3') }}" type="audio/mp3">
         Your browser does not support the audio element.
@@ -142,10 +146,12 @@
                                 <a href="#services" class="text-white font-weight-400">@lang('landing.menu.service')</a>
                             </div>
                             <div class="col-xl-2 col-md-2 col-sm-12">
-                                <a href="#portfolio" class="text-white font-weight-400">@lang('landing.menu.portfolio')</a>
+                                <a href="#portfolio"
+                                    class="text-white font-weight-400">@lang('landing.menu.portfolio')</a>
                             </div>
                             <div class="col-xl-2 col-md-2 col-sm-12">
-                                <a href="#contactUs" class="text-white font-weight-400">@lang('landing.menu.contact')</a>
+                                <a href="#contactUs"
+                                    class="text-white font-weight-400">@lang('landing.menu.contact')</a>
                             </div>
                         </div>
                         <p class="text-white font-weight-300 my-3">
