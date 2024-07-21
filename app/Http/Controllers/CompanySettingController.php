@@ -44,7 +44,9 @@ class CompanySettingController extends Controller
             $companySetting = CompanySetting::where('slug', $input['slug'])->first();
             if (!empty($request->value)) {
                 if ($request->hasFile('value')) {
-                    $this->deleteFile($companySetting->value);
+                    if ($companySetting->value) {
+                        $this->deleteFile($companySetting->value);
+                    }
                     $storeFile = $this->storeFile('compro/', $input['value']);
                     $input['value'] = $storeFile;
                 }
