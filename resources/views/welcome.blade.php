@@ -94,7 +94,7 @@
 <body>
     <div id="loader">
         <span id="text">
-            <img src="{{asset('/assets/img/footer_logo.png')}}" alt="logo_footer.png" width="150">
+            <img src="{{asset('/assets/img/logo_footer.png')}}" alt="logo_footer.png" width="150">
         </span>
         <span id="percent">0%</span>
         <div id="bar">
@@ -144,7 +144,7 @@
             <div class="container text-center">
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-md-12">
-                        <img src="{{asset('/assets/img/footer_logo.png')}}" alt="logo_footer.png" width="150">
+                        <img src="{{asset('/assets/img/logo_footer.png')}}" alt="logo_footer.png" width="150">
                         <div class="underline my-3"></div>
                         <div class="row justify-content-center">
                             <div class="col-xl-2 col-md-2 col-sm-12">

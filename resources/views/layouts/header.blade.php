@@ -4,7 +4,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark p-0">
             <a href="#home" class="navbar-brand">
                 {{-- <h1 class="text-white">AI<span class="text-dark">.</span>Tech</h1> --}}
-                <img src="{{asset('assets/img/logo_19218.png')}}" width="140" alt="">
+                <img src="{{asset('assets/img/logo_header.png')}}" width="180" alt="">
             </a>
             <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
@@ -66,7 +66,7 @@
                 <div class="scorri">
                     <div class="tithome d-flex px-5" style="justify-content: space-between;">
                         <div class="text-marque text-orange">
-                            Food N beverage
+                            Food & beverage
                         </div>
                         <div class="text-marque icon mt-2 text-orange">
                         </div>
