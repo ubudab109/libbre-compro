@@ -29,6 +29,8 @@ return [
         "desc_eleven" => "Dengan fokus pada inovasi dan kualitas, kami siap memberikan solusi yang sesuai dengan tantangan yang dihadapi oleh klien-klien kami.",
         "vision" => "Mendukung dan mengembangkan serta memberikan inovasi kreatif dan teknologi terhadap industri Food & Beverage, dengan tujuan untuk membentuk sebuah ekosistem yang memungkinkan pertumbuhan bagi industri F&B di Indonesia.",
         "mission" => "Menjadi mitra strategis bagi para pelaku bisnis FnB, membantu mereka meraih kesuksesan dengan mengintegrasikan kreativitas dan teknologi kecerdasan buatan. Kami bertujuan untuk tidak hanya mengikuti tren, tetapi juga mendorong perkembangan industri FnB dengan solusi inovatif.",
+        "vision_title" => "Visi",
+        "mision_title" => "Misi",
     ],
     "about_us" => [
         "title" => "Tentang Kami",

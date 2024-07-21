@@ -364,7 +364,7 @@
                     <div class="card bg-dark h-100 border-0">
                         <div class="card-body">
                             <div class="row py-2">
-                                <h5 class="section-title text-center">Visi</h5>
+                                <h5 class="section-title text-center">@lang('landing.modal_see_more.vision_title')</h5>
                                 <div class="underline"></div>
                             </div>
                             <p>
@@ -378,7 +378,7 @@
                     <div class="card bg-dark h-100 border-0">
                         <div class="card-body">
                             <div class="row py-2">
-                                <h5 class="section-title text-center">Misi</h5>
+                                <h5 class="section-title text-center">@lang('landing.modal_see_more.mision_title')</h5>
                                 <div class="underline"></div>
                             </div>
                             <p>
