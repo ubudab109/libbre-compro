@@ -36,7 +36,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
+            width: 100%;
             height: 100vh;
             background: #000;
             z-index: 9999;
@@ -59,8 +59,8 @@
         }
 
         #bar {
-            width: 80%;
-            height: 10px;
+            width: 14%;
+            height: 8px;
             background: #1D1D1D;
         }
 
@@ -94,9 +94,9 @@
 <body>
     <div id="loader">
         <span id="text">
-            <img src="{{asset('/assets/img/logo_footer.png')}}" alt="logo_footer.png" width="150">
+            <img src="{{asset('/assets/img/logo_footer.png')}}" alt="logo_footer.png" width="100">
         </span>
-        <span id="percent">0%</span>
+        <span id="percent" style="font-size: 10px;">0%</span>
         <div id="bar">
             <div class="progress"></div>
         </div>

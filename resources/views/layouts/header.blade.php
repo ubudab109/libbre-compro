@@ -2,9 +2,9 @@
 <div class="container-fluid sticky-top">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark p-0">
-            <a href="#home" class="navbar-brand">
+            <a href="#home" class="navbar-brand p-0">
                 {{-- <h1 class="text-white">AI<span class="text-dark">.</span>Tech</h1> --}}
-                <img src="{{asset('assets/img/logo_header.png')}}" width="180" alt="">
+                <img src="{{asset('assets/img/logo_header.png')}}" width="150" alt="">
             </a>
             <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse">
