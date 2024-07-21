@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Portfolio;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $data['portfolios'] = Portfolio::all();
-    return view('welcome', $data);
-})->name('home');
+Route::group(['middleware' => ['lang']], function () {
+    Route::get('/', function () {
+        $data['portfolios'] = Portfolio::all();
+        return view('welcome', $data);
+    })->name('home');
+});
+
+Route::get('lang-change/{lang}', function ($lang) {
+    Session::put('locale', $lang);
+    return redirect()->back();
+})->name('lang.switch');

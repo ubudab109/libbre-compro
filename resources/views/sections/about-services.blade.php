@@ -1,7 +1,7 @@
 <div class="container" style="background-color: #000;">
     <section id="about">
         <div class="row">
-            <h5 class="section-title text-center">About Us</h5>
+            <h5 class="section-title text-center">@lang('landing.about_us.title')</h5>
             <div class="underline"></div>
         </div>
         <div class="row mt-5">
@@ -10,31 +10,27 @@
             </div>
             <div class="col-lg-6 col-md-12 col-text-responsive align-content-center">
                 <h1 class="text-orange mt-3">
-                    Kami Menghadirkan Integrasi Kreatif pada industri F&B
+                    @lang('landing.about_us.desc_one')
                 </h1>
                 <div class="divider blue-divider animated slideInLeft"></div>
                 <p class="text-white paragraph-title mb-4 animated slideInRight">
-                    <b>Libbre Creative Integrate</b> adalah agensi kreatif yang menggabungkan kreativitas dan
-                    inovasi
-                    teknologi dalam industri Food & Beverage Indonesia. Berdiri sejak 2023, kami menawarkan layanan
+                    <b>Libbre Creative Integrate</b> @lang('landing.about_us.desc_two')
                     <b>
-                        branding, pemasaran digital, pengembangan web, dan produksi media, serta berperan sebagai
-                        konsultan bisnis dan pengembang perangkat lunak.
+                        @lang('landing.about_us.desc_three')
                     </b>
                 </p>
 
                 <p class="text-white paragraph-title mb-4 animated slideInRight">
-                    Dibalik layanan kami, terdapat semangat inovasi yang memandu langkah kami. Kami tidak hanya
-                    mengikuti tren, tapi juga mendorong.
+                    @lang('landing.about_us.desc_four')
                 </p>
-                <a href="" class="btn btn-primary-custom pt-2 px-5 me-3 animated slideInRight">See More</a>
+                <a href="" class="btn btn-primary-custom pt-2 px-5 me-3 animated slideInRight">@lang('landing.about_us.see_more')</a>
             </div>
         </div>
     </section>
 
     <section id="services" style="margin-top: 100px;">
         <div class="row">
-            <h5 class="section-title text-center">Services</h5>
+            <h5 class="section-title text-center">@lang('landing.services.title')</h5>
             <div class="underline"></div>
         </div>
         <div class="row mt-5">
@@ -43,23 +39,20 @@
                     <button class="nav-link nav-tab-services active" id="service-offerings-tab" data-bs-toggle="tab"
                         data-bs-target="#service-offerings" type="button" role="tab"
                         aria-controls="service-offerings" aria-selected="true">
-                        SERVICE OFFERINGS
+                        @lang('landing.services.acc.service_offerings')
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
                     <button class="nav-link nav-tab-services" id="comprehensive-service-tab" data-bs-toggle="tab"
                         data-bs-target="#comprehensive-service" type="button" role="tab"
                         aria-controls="comprehensive-service" aria-selected="false">
-                        COMPREHENSIVE SERVICE
+                        @lang('landing.services.acc.comprehensive_offerings')
                     </button>
                 </li>
             </ul>
 
             <p class="text-white paragraph-title mb-1 animated slideInRight text-center">
-                Kami menawarkan layanan branding, pemasaran digital, pengembangan web, dan produksi media khusus
-                industri Food & Beverage. dengan mengadopsi AI sebagai tools untuk meningkatkan efisiensi dan
-                kreativitas. Sebagai mitra strategis, kami membantu merencanakan dan melaksanakan strategi yang
-                berkelanjutan.
+                @lang('landing.services.desc')
             </p>
 
             <div class="tab-content" id="myTabContent">
@@ -69,29 +62,29 @@
                     <div class="owl-carousel owl-theme mt-5 mb-3" id="serviceCarousel">
                         <x-our-service-component
                             image="{{asset('/assets/img/svg/web-development-svgrepo-com.svg')}}"
-                            serviceName="Web Development"
-                            desc="Layanan Pengembangan Website Komprehensif kami dirancang untuk membantu bisnis Anda memiliki kehadiran online yang profesional, responsif, dan efektif."
+                            serviceName="landing.services.data.web_development"
+                            desc="landing.services.data.desc_web_development"
                             modal="#website-service-modal"
                         ></x-our-service-component>
 
                         <x-our-service-component
                             image="{{asset('/assets/img/svg/monitor-edit-svgrepo-com.svg')}}"
-                            serviceName="Branding"
-                            desc="Layanan branding yang komprehensif dan inovatif khusus untuk industri Food and Beverage (F&B). Kami memahami bahwa identitas merek yang kuat adalah kunci sukses dalam pasar yang kompetitif."
+                            serviceName="landing.services.data.branding"
+                            desc="landing.services.data.desc_branding"
                             modal="#branding-service-modal"
                         ></x-our-service-component>
 
                         <x-our-service-component
                             image="{{asset('/assets/img/svg/digital-marketing-promotion-advertising-svgrepo-com.svg')}}"
-                            serviceName="Digital Marketing"
-                            desc="Layanan Digital Marketing Terpadu kami dirancang untuk membantu bisnis Anda mencapai dan melibatkan audiens secara efektif melalui berbagai saluran digital."
+                            serviceName="landing.services.data.digital_marketing"
+                            desc="landing.services.data.desc_digital_marketing"
                             modal="#digital-service-modal"
                         ></x-our-service-component>
 
                         <x-our-service-component
                             image="{{asset('/assets/img/svg/cinema-clapperboard-media-svgrepo-com.svg')}}"
-                            serviceName="Media Production"
-                            desc="Layanan produksi media yang dirancang untuk meningkatkan daya tarik visual dan citra merek bisnis food and beverage (F&B) Anda."
+                            serviceName="landing.services.data.media_production"
+                            desc="landing.services.data.desc_media_production"
                             modal="#media-service-modal"
                         ></x-our-service-component>
                     </div>
@@ -103,8 +96,8 @@
                     <div class="owl-carousel owl-theme mt-5 mb-3" id="comprehensiveService">
                         <x-our-service-component
                             image="{{asset('/assets/img/svg/food-stall-stand-svgrepo-com.svg')}}"
-                            serviceName="FnB Consultan Business"
-                            desc="Kami menyediakan layanan konsultasi bisnis yang komprehensif, dirancang khusus untuk industri food and beverage (F&B). Kami mengintegrasikan pendekatan inovatif dan pengalaman mendalam untuk membantu bisnis berkembang."
+                            serviceName="landing.services.data.fnb"
+                            desc="landing.services.data.desc_fnb"
                             modal="#fnb-service-modal"
                         ></x-our-service-component>
                     </div>

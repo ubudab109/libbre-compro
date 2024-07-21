@@ -3,48 +3,49 @@
         <div class="card-body">
             <ul class="list-check text-white">
                 <li class="mb-4">
-                    Corporate Branding
+                    @lang('landing.services.data.modal.corparate_branding.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk membangun identitas merek yang kohesif dan berpengaruh,
-                            mencakup pengembangan logo, warna, tipografi, dan elemen visual lainnya yang
-                            mencerminkan nilai dan visi perusahaan Anda.</li>
+                        <li>
+                            @lang('landing.services.data.modal.corparate_branding.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Retail Branding
+                    @lang('landing.services.data.modal.retail_branding.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk Membangun citra merek untuk restoran atau gerai makanan dan
-                            minuman, termasuk desain interior, suasana, dan kualitas layanan yang diberikan.</li>
+                        <li>
+                            @lang('landing.services.data.modal.retail_branding.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Product Branding
+                    @lang('landing.services.data.modal.product_branding.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk Membangun Penekanan pada produk spesifik, baik itu makanan
-                            atau minuman tertentu yang memiliki keunikan dan membedakannya dari produk serupa di
-                            pasar.</li>
+                        <li>@lang('landing.services.data.modal.product_branding.desc')</li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Personal Branding
+                    @lang('landing.services.data.modal.personal_branding.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk membangun identitas tokoh atau figur yang memiliki pengaruh
-                            besar dalam menciptakan identitas.</li>
+                        <li>
+                            @lang('landing.services.data.modal.personal_branding.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Service Branding
+                    @lang('landing.services.data.modal.service_branding.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk Membangun kualitas pelayanan yang diberikan kepada
-                            pelanggan, seperti pengalaman kepada pelanggan yang baik.</li>
+                        <li>
+                            @lang('landing.services.data.modal.service_branding.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Cultural Branding
+                    @lang('landing.services.data.modal.cultural_branding.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk Membangun Mengintegrasikan elemen budaya atau nilai-nilai
-                            lokal dalam strategi branding untuk mengakomodasi preferensi dan harapan konsumen yang
-                            spesifik.</li>
+                        <li>
+                            @lang('landing.services.data.modal.cultural_branding.desc')
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -57,45 +58,59 @@
         <div class="card-body">
             <ul class="list-check text-white">
                 <li class="mb-4">
-                    Company Website
+                    @lang('landing.services.data.modal.company_website.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk membangun situs web perusahaan yang menampilkan informasi tentang bisnis, layanan, produk, dan kontak.</li>
+                        <li>
+                            @lang('landing.services.data.modal.company_website.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Blog Website
+                    @lang('landing.services.data.modal.blog_website.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk membantu membangun kehadiran online yang kuat, untuk mempublikasikan artikel, berita, dan konten lainnya.</li>
+                        <li>
+                            @lang('landing.services.data.modal.blog_website.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Portfolio Website
+                    @lang('landing.services.data.modal.portfolio_website.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk menampilkan karya dan proyek profesional Anda dalam bentuk portofolio.</li>
+                        <li>
+                            @lang('landing.services.data.modal.portfolio_website.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    E-Commerce Web
+                    @lang('landing.services.data.modal.ecommerce_website.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk menjual produk atau layanan secara online dengan fitur-fitur seperti katalog produk, keranjang belanja, dan pembayaran.</li>
+                        <li>
+                            @lang('landing.services.data.modal.ecommerce_website.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Market Place Website
+                    @lang('landing.services.data.modal.marketplace_website.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk membangun platform online yang menghubungkan penjual dan pembeli, memungkinkan transaksi antara berbagai pihak.</li>
+                        <li>
+                            @lang('landing.services.data.modal.marketplace_website.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Personal Website
+                    @lang('landing.services.data.modal.personal_website.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk berbagi informasi tentang diri Anda, blog, portofolio, dan kontak.</li>
+                        <li>
+                            @lang('landing.services.data.modal.personal_website.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Custom Website
+                    @lang('landing.services.data.modal.custom_website.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk situs web yang dibangun dari nol sesuai dengan kebutuhan dan spesifikasi unik bisnis Anda.</li>
+                        <li>
+                            @lang('landing.services.data.modal.custom_website.desc')
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -108,57 +123,72 @@
         <div class="card-body">
             <ul class="list-check text-white">
                 <li class="mb-4">
-                    Strategi Digital Marketing
+                    @lang('landing.services.data.modal.digital_marketing_strategy.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk Pengembangan strategi komprehensif yang mencakup berbagai saluran digital untuk mencapai tujuan bisnis Anda. </li>
+                        <li>
+                            @lang('landing.services.data.modal.digital_marketing_strategy.desc')
+                            
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Manajemen Media Sosial (SMM)
+                    @lang('landing.services.data.modal.ssm.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk Mengelola dan mengoptimalkan akun media sosial untuk meningkatkan interaksi dan visibilitas merek.</li>
+                        <li>
+                            @lang('landing.services.data.modal.ssm.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Pay-Per-Click Advertising (PPC)
+                    @lang('landing.services.data.modal.ppc.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk Menyusun dan mengelola kampanye iklan berbayar di platform seperti Google Ads untuk meningkatkan lalu lintas dan konversi.</li>
+                        <li>
+                            @lang('landing.services.data.modal.ppc.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Optimisasi Mesin Pencari (SEO)
+                    @lang('landing.services.data.modal.seo.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk Meningkatkan visibilitas situs web Anda di mesin pencari melalui optimisasi konten, penggunaan kata kunci, dan teknik SEO lainnya.</li>
+                        <li>
+                            @lang('landing.services.data.modal.seo.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Email Marketing
+                    @lang('landing.services.data.modal.email_marketing.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk Mengembangkan dan mengirim kampanye email yang dipersonalisasi untuk mempertahankan dan menarik pelanggan.</li>
+                        <li>
+                            @lang('landing.services.data.modal.email_marketing.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Conversation Rate Optimization
+                    @lang('landing.services.data.modal.cro.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk Meningkatkan persentase pengunjung situs web yang melakukan tindakan yang diinginkan, seperti pembelian atau pendaftaran.</li>
+                        <li>
+                            @lang('landing.services.data.modal.cro.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Influencer Marketing
+                    @lang('landing.services.data.modal.influencer_marketing.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk bekerja sama dengan influencer untuk mempromosikan produk atau layanan Anda kepada audiens yang lebih luas.</li>
+                        <li>
+                            @lang('landing.services.data.modal.influencer_marketing.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Manajemen Media Sosial (SMM)
+                    @lang('landing.services.data.modal.smm.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk Mengelola dan mengoptimalkan akun media sosial untuk meningkatkan interaksi dan visibilitas merek.</li>
+                        <li>@lang('landing.services.data.modal.smm.desc')</li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Pay-Per-Click Advertising (PPC)
+                    @lang('landing.services.data.modal.ppc_2.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk Menyusun dan mengelola kampanye iklan berbayar di platform seperti Google Ads untuk meningkatkan lalu lintas dan konversi.</li>
+                        <li>@lang('landing.services.data.modal.ppc_2.desc')</li>
                     </ul>
                 </li>
             </ul>
@@ -171,39 +201,51 @@
         <div class="card-body">
             <ul class="list-check text-white">
                 <li class="mb-4">
-                    Produksi Video
+                    @lang('landing.services.data.modal.video_production.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk membuat video promosi, iklan, dan konten visual lainnya dari konsep hingga eksekusi akhir.</li>
+                        <li>
+                            @lang('landing.services.data.modal.video_production.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Fotografi Profesional
+                    @lang('landing.services.data.modal.professional_photography.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk membantu pengambilan foto berkualitas tinggi untuk produk, makanan, acara, dan kebutuhan bisnis lainnya.</li>
+                        <li>
+                            @lang('landing.services.data.modal.professional_photography.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Produksi Audio
+                    @lang('landing.services.data.modal.audio_production.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk rekaman dan editing suara untuk jinggle, backsound dan konten audio lainnya.</li>
+                        <li>
+                            @lang('landing.services.data.modal.audio_production.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Desain Grafis
+                    @lang('landing.services.data.modal.graphic_design.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk membantu pembuatan desain visual seperti brosur, flayer dan materi pemasaran lainnya untuk meningkatkan daya tarik merek.</li>
+                        <li>
+                            @lang('landing.services.data.modal.graphic_design.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Konten Produksi
+                    @lang('landing.services.data.modal.content_production.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk membantu pembuatan konten visual dan audio untuk berbagai platform dan tujuan pemasaran.</li>
+                        <li>
+                            @lang('landing.services.data.modal.content_production.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Editing dan Post-Produksi
+                    @lang('landing.services.data.modal.editing_post_production.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk membantu penyuntingan dan penyempurnaan video dan audio untuk memastikan hasil akhir yang profesional dan berkualitas tinggi.</li>
+                        <li>
+                            @lang('landing.services.data.modal.editing_post_production.desc')
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -216,63 +258,83 @@
         <div class="card-body">
             <ul class="list-check text-white">
                 <li class="mb-4">
-                    Analisis Pasar dan Riset Pelanggan
+                    @lang('landing.services.data.modal.macr.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk studi mendalam tentang pasar F&B dan perilaku konsumen untuk mengidentifikasi peluang dan tren yang relevan.</li>
+                        <li>
+                            @lang('landing.services.data.modal.macr.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Pengembangan Konsep Usaha
+                    @lang('landing.services.data.modal.bcd.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk merancang ide bisnis yang unik dan menarik, mulai dari konsep menu hingga tema restoran yang mencerminkan identitas merek.</li>
+                        <li>
+                            @lang('landing.services.data.modal.bcd.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Pengembangan Produk
+                    @lang('landing.services.data.modal.product_development.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk merancang Inovasi dan pengembangan menu atau produk baru yang memenuhi permintaan pasar dan mengikuti tren konsumen.</li>
+                        <li>
+                            @lang('landing.services.data.modal.product_development.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Strategi Pemasaran dan Branding
+                    @lang('landing.services.data.modal.mbs.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk merancang strategi komprehensif untuk memasarkan bisnis F&B Anda dan membangun citra merek yang kuat di mata konsumen.</li>
+                        <li>
+                            @lang('landing.services.data.modal.mbs.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Perencanaan Operasional
+                    @lang('landing.services.data.modal.optional_planning.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk perencanaan efisien untuk operasional harian, termasuk manajemen persediaan, proses operasional, dan pengaturan sistem.</li>
+                        <li>
+                            @lang('landing.services.data.modal.optional_planning.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Perencanaan Keuangan
+                    @lang('landing.services.data.modal.financial_planning.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk Menyusun anggaran, proyeksi pendapatan, dan manajemen keuangan yang solid untuk mendukung pertumbuhan dan keberlanjutan bisnis.</li>
+                        <li>
+                            @lang('landing.services.data.modal.financial_planning.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Pengelolaan Sumber Daya Manusia
+                    @lang('landing.services.data.modal.hrm.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk memberikan solusi untuk manajemen SDM, termasuk perekrutan, pelatihan, pengembangan, dan retensi karyawan.</li>
+                        <li>
+                            @lang('landing.services.data.modal.hrm.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Desain Interior dan Layout
+                    @lang('landing.services.data.modal.idl.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk Merancang tata letak dan desain interior yang menciptakan pengalaman pelanggan yang menyenangkan dan efisien.</li>
+                        <li>
+                            @lang('landing.services.data.modal.idl.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Legal dan Kepatuhan
+                    @lang('landing.services.data.modal.legal.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk memastikan kepatuhan bisnis Anda terhadap peraturan hukum dan regulasi yang berlaku, termasuk perizinan dan masalah lingkungan.</li>
+                        <li>
+                            @lang('landing.services.data.modal.legal.desc')
+                        </li>
                     </ul>
                 </li>
                 <li class="mb-4">
-                    Pemantauan dan Evaluasi
+                    @lang('landing.services.data.modal.monitoring.title')
                     <ul style="list-style: none">
-                        <li>Layanan ini dirancang untuk melakukan pemantauan terus-menerus terhadap kinerja bisnis, menganalisis hasil, dan mengevaluasi strategi untuk perbaikan berkelanjutan.</li>
+                        <li>
+                            @lang('landing.services.data.modal.monitoring.desc')
+                        </li>
                     </ul>
                 </li>
             </ul>

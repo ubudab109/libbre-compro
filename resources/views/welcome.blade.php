@@ -98,13 +98,14 @@
     </div> --}}
     <div class="tooltip-container">
         <img src="{{asset('/assets/img/music.png')}}" alt="music" class="music-section" id="music-icon">
-        <div class="tooltip" id="tooltip" style="opacity: 1; visibility: hidden;">Feel lonely? Please play this music</div>
+        <div class="tooltip" id="tooltip" style="opacity: 1; visibility: hidden;">Feel lonely? Please play this music
+        </div>
     </div>
     <audio id="bg-music" autoplay>
         <source src="{{ asset('assets/music/bg_music.mp3') }}" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
-    
+
     <div class="content">
         @include('layouts.header')
         @include('sections.about-services')
@@ -112,7 +113,7 @@
         <div class="container-fluid mt-5">
             <div class="row p-4 justify-content-center" style="background: #1D1D1D">
                 <div class="col-12 text-center">
-                    <h3 class="text-white">WE GROW TOGETHER</h3>
+                    <h3 class="text-white">@lang('landing.we_grow')</h3>
                 </div>
             </div>
         </div>
@@ -135,26 +136,21 @@
                         <div class="underline my-3"></div>
                         <div class="row justify-content-center">
                             <div class="col-xl-2 col-md-2 col-sm-12">
-                                <a href="" class="text-white font-weight-400">Categories</a>
+                                <a href="#about" class="text-white font-weight-400">@lang('landing.menu.about_us')</a>
                             </div>
                             <div class="col-xl-2 col-md-2 col-sm-12">
-                                <a href="" class="text-white font-weight-400">About</a>
+                                <a href="#services" class="text-white font-weight-400">@lang('landing.menu.service')</a>
                             </div>
                             <div class="col-xl-2 col-md-2 col-sm-12">
-                                <a href="" class="text-white font-weight-400">Services</a>
+                                <a href="#portfolio" class="text-white font-weight-400">@lang('landing.menu.portfolio')</a>
                             </div>
                             <div class="col-xl-2 col-md-2 col-sm-12">
-                                <a href="" class="text-white font-weight-400">Portfolio</a>
-                            </div>
-                            <div class="col-xl-2 col-md-2 col-sm-12">
-                                <a href="" class="text-white font-weight-400">Pages</a>
-                            </div>
-                            <div class="col-xl-2 col-md-2 col-sm-12">
-                                <a href="" class="text-white font-weight-400">Support</a>
+                                <a href="#contactUs" class="text-white font-weight-400">@lang('landing.menu.contact')</a>
                             </div>
                         </div>
                         <p class="text-white font-weight-300 my-3">
-                            Transforming the Food & Beverage Industry with Creativity and Innovation, we Helping For F&B Businnes
+                            Transforming the Food & Beverage Industry with Creativity and Innovation, we Helping For F&B
+                            Businnes
                         </p>
                         <div class="text-white icon-footer mb-5 mt-5">
 
@@ -177,7 +173,8 @@
                             </a>
 
                             {{-- LINKEDIN --}}
-                            <a href="https://www.linkedin.com/company/libbre-creative-integrate" target="_blank" rel="noreferrer">
+                            <a href="https://www.linkedin.com/company/libbre-creative-integrate" target="_blank"
+                                rel="noreferrer">
                                 <svg viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M16.9004 0C17.4308 0 17.9395 0.210714 18.3146 0.585786C18.6897 0.960859 18.9004 1.46957 18.9004 2V16C18.9004 16.5304 18.6897 17.0391 18.3146 17.4142C17.9395 17.7893 17.4308 18 16.9004 18H2.90039C2.36996 18 1.86125 17.7893 1.48618 17.4142C1.1111 17.0391 0.900391 16.5304 0.900391 16V2C0.900391 1.46957 1.1111 0.960859 1.48618 0.585786C1.86125 0.210714 2.36996 0 2.90039 0H16.9004ZM16.4004 15.5V10.2C16.4004 9.33539 16.0569 8.5062 15.4456 7.89483C14.8342 7.28346 14.005 6.94 13.1404 6.94C12.2904 6.94 11.3004 7.46 10.8204 8.24V7.13H8.03039V15.5H10.8204V10.57C10.8204 9.8 11.4404 9.17 12.2104 9.17C12.5817 9.17 12.9378 9.3175 13.2003 9.58005C13.4629 9.8426 13.6104 10.1987 13.6104 10.57V15.5H16.4004ZM4.78039 5.56C5.22595 5.56 5.65327 5.383 5.96833 5.06794C6.28339 4.75288 6.46039 4.32556 6.46039 3.88C6.46039 2.95 5.71039 2.19 4.78039 2.19C4.33217 2.19 3.90232 2.36805 3.58538 2.68499C3.26844 3.00193 3.09039 3.43178 3.09039 3.88C3.09039 4.81 3.85039 5.56 4.78039 5.56ZM6.17039 15.5V7.13H3.40039V15.5H6.17039Z"

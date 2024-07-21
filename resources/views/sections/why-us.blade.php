@@ -6,17 +6,17 @@
             </div>
             <div class="col-lg-6 col-md-12 col-text-responsive">
                 <h1 class="text-white mt-3">
-                    Why Us
+                    @lang('landing.why_us.title')
                 </h1>
                 <div class="divider blue-divider animated slideInLeft"></div>
                 <p class="text-white paragraph-title mb-4 font-weight-300 animated slideInRight">
-                    Di balik layanan kami, terdapat semangat inovasi yang memandu langkah kami. Kami mengutamakan pendekatan kolaboratif dengan para klien, memahami kebutuhan unik mereka, dan memberikan solusi yang disesuaikan. Tim kami yang berpengalaman bekerja sama untuk menghasilkan ide-ide kreatif Dengan memadukan kecerdasan buatan (AI) sebagai alat strategis.
+                    @lang('landing.why_us.desc')
                 </p>
 
                 <ul class="list-check" style="text-align: left;">
-                    <li class="text-white font-weight-200">Specialist Food & Beverage</li>
-                    <li class="text-white font-weight-200">Experienced Team</li>
-                    <li class="text-white font-weight-200">Modern Technology</li>
+                    <li class="text-white font-weight-200">@lang('landing.why_us.list.one')</li>
+                    <li class="text-white font-weight-200">@lang('landing.why_us.list.two')</li>
+                    <li class="text-white font-weight-200">@lang('landing.why_us.list.three')</li>
                 </ul>
             </div>
         </div>

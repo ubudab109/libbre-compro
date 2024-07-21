@@ -12,16 +12,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto" style="background-color: #000;">
-                    <a href="#home" class="nav-item nav-link active">Home</a>
-                    <a href="#about" class="nav-item nav-link">About Us</a>
-                    <a href="#services" class="nav-item nav-link">Services</a>
-                    <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
-                    <a href="#contactUs" class="nav-item nav-link">Contact Us</a>
+                    <a href="#home" class="nav-item nav-link active">@lang('landing.menu.home')</a>
+                    <a href="#about" class="nav-item nav-link">@lang('landing.menu.about_us')</a>
+                    <a href="#services" class="nav-item nav-link">@lang('landing.menu.service')</a>
+                    <a href="#portfolio" class="nav-item nav-link">@lang('landing.menu.portfolio')</a>
+                    <a href="#contactUs" class="nav-item nav-link">@lang('landing.menu.contact')</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Language</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">@lang('landing.menu.lang')</a>
                         <div class="dropdown-menu bg-light mt-2">
-                            <a href="feature.html" class="dropdown-item">Bahasa</a>
-                            <a href="team.html" class="dropdown-item">English</a>
+                            <a href="{{ route('lang.switch', 'id') }}" class="dropdown-item">Bahasa</a>
+                            <a href="{{ route('lang.switch', 'en') }}" class="dropdown-item">English</a>
                         </div>
                     </div>
                 </div>
@@ -39,10 +39,10 @@
             <div class="row mb-5 hero-row mt-5">
                 <div class="col-lg-12 text-center">
                     <div class="text-orange mb-3 small-title animated slideInRight">
-                        WELCOME TO LIBBRE CREATIVE INTEGRATE
+                        @lang('landing.header.welcome')
                     </div>
                     <h1 class="display-4 text-white high-title mb-4 animated slideInRight">
-                        WE ARE CREATIVE INTEGRATE AGENCY
+                        @lang('landing.header.creative')
                     </h1>
                     <p class="text-white paragraph-title mb-4 animated slideInRight">
                         "Transforming the Food & Beverage Industry

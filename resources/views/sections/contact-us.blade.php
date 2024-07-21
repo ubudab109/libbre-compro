@@ -2,10 +2,12 @@
     <section id="contactUs">
         <div class="row p-5">
             <div class="col-lg-6 col-md-12">
-                <h3 class="text-white font-weight-700">Get In Touch</h3>
+                <h3 class="text-white font-weight-700">
+                    @lang('landing.contact_us.title')
+                </h3>
                 <div class="underline-white"></div>
                 <p class="text-white font-weight-300">
-                    We Are Looking Forward To Start Project With You.
+                    @lang('landing.contact_us.sub_title')
                 </p>
                 <div class="d-flex flex-wrap footer-info my-5">
                     <svg style="width: 30px; margin-bottom: 10px;margin-right: 15px;" viewBox="0 0 33 45" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -14,7 +16,7 @@
                             fill="white" />
                     </svg>
                     <div class="text-white footer-info-text">
-                        <h5 class="mx-3 text-white">Office Address</h5>
+                        <h5 class="mx-3 text-white">@lang('landing.contact_us.office')</h5>
                         <span class="mx-3 font-weight-300">Jakarta, Indonesia</span>
                     </div>
                 </div>
@@ -26,7 +28,7 @@
                             fill="white" />
                     </svg>
                     <div class="text-white footer-info-text mx-3">
-                        <h5 class="mx-3 text-white">Mail Us</h5>
+                        <h5 class="mx-3 text-white">@lang('landing.contact_us.mail')</h5>
                         <span class="mx-3 font-weight-300">modi@libbrecreative.com</span>
                     </div>
                 </div>
@@ -40,7 +42,7 @@
                             fill="white" />
                     </svg>
                     <div class="text-white footer-info-text mx-3">
-                        <h5 class="mx-3 text-white">Call Us</h5>
+                        <h5 class="mx-3 text-white">@lang('landing.contact_us.call')</h5>
                         <span class="font-weight-300 mx-3">(+62) 811-140-172</span>
                     </div>
                 </div>
@@ -52,19 +54,19 @@
                     <div class="card-body p-4">
                         <form action="">
                             <div class="form-group my-3">
-                                <label for="">Your Name</label>
+                                <label for="">@lang('landing.contact_us.input_name')</label>
                                 <input type="text" name="name" id="" class="form-control">
                             </div>
                             <div class="form-group my-3">
-                                <label for="">Your Email</label>
+                                <label for="">@lang('landing.contact_us.input_mail')</label>
                                 <input type="email" name="email" id="" class="form-control">
                             </div>
                             <div class="form-group my-3">
-                                <label for="">Your Message</label>
+                                <label for="">@lang('landing.contact_us.input_message')</label>
                                 <textarea name="message" id="" cols="30" rows="10" class="form-control"></textarea>
                             </div>
                             <div class="text-center">
-                                <button class="btn-primary-custom" type="submit">Send Message</button>
+                                <button class="btn-primary-custom" type="submit">@lang('landing.contact_us.button')</button>
                             </div>
                         </form>
                     </div>

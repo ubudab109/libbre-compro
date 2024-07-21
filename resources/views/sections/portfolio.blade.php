@@ -1,9 +1,9 @@
 <div class="container mb-5" style="background-color: #000; padding-top: 40px;">
     <section id="portfolio">
         <div class="row">
-            <h5 class="section-title text-center">Portfolio</h5>
+            <h5 class="section-title text-center">@lang('landing.portfolio.title')</h5>
             <div class="underline"></div>
-            <span class="text-center text-white mt-3 section-sub-title">Our Work</span>
+            <span class="text-center text-white mt-3 section-sub-title">@lang('landing.portfolio.sub_title')</span>
         </div>
         <div class="row mt-5">
             <div class="owl-carousel owl-theme mt-3 mb-3" id="portfolioServices">

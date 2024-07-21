@@ -606,7 +606,7 @@ section .row {
 
 @media (min-width: 487px) {
     #myTab {
-        width: 580px;
+        width: 620px;
     }
 
     .nav-tab-services.active {

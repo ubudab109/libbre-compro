@@ -2,13 +2,11 @@
     <section id="our-team">
         <div class="container">
             <div class="row">
-                <h5 class="section-title text-center">Our Team</h5>
+                <h5 class="section-title text-center">@lang('landing.our_team.title')</h5>
                 <div class="underline"></div>
-                <h3 class="text-center text-white font-weight-500 mt-3">Meet Our Expert Team</h3>
+                <h3 class="text-center text-white font-weight-500 mt-3">@lang('landing.our_team.sub_title')</h3>
                 <p class="text-white text-center font-weight-300 mt-3 mb-5">
-                    Kami bangga memperkenalkan tim ahli kami yang berdedikasi dan berpengalaman. Setiap anggota tim kami
-                    memiliki keahlian khusus dan komitmen untuk memberikan hasil terbaik bagi klien kami. Bersama-sama,
-                    kami bekerja untuk mencapai visi dan misi perusahaan dengan inovasi dan kolaborasi yang kuat.
+                    @lang('landing.our_team.desc')
                 </p>
                 <div class="row justify-content-center">
                     <div class="owl-carousel owl-theme mt-5 mb-3" id="teamCarousel">
