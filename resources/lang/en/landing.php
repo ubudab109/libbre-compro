@@ -250,4 +250,13 @@ return [
         "input_message" => "Your Message",
         "button" => "Send Message"
     ],
+    "compro_file" => [
+        "title" => "Download Company Profile Document",
+        "paragraph" => "Enter your email below to receive our Company Profile Document. Once you submit your email, we will promptly send the document to the provided email address.",
+        "email_input" => "Your Email Address",
+        "button" => "Send Document",
+        "button_sending" => "Sending...",
+        "notif" => "Thank you for your interest in our Company Profile. The document is sending. Check Your email",
+    ],
+    "error_global" => "Something went wrong! Please try again later.",
 ];

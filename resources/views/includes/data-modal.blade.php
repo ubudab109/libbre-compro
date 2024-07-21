@@ -384,12 +384,34 @@
                                 <div class="underline"></div>
                             </div>
                             <p>
-                                Menjadi mitra strategis bagi para pelaku bisnis FnB, membantu mereka meraih kesuksesan dengan mengintegrasikan kreativitas dan teknologi kecerdasan buatan. Kami bertujuan untuk tidak hanya mengikuti tren, tetapi juga mendorong perkembangan industri FnB dengan solusi inovatif.
+                                Menjadi mitra strategis bagi para pelaku bisnis FnB, membantu mereka meraih kesuksesan
+                                dengan mengintegrasikan kreativitas dan teknologi kecerdasan buatan. Kami bertujuan
+                                untuk tidak hanya mengikuti tren, tetapi juga mendorong perkembangan industri FnB dengan
+                                solusi inovatif.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</x-flip-bounce-modal>
+
+<x-flip-bounce-modal id="modalFileSend" title="landing.compro_file.title">
+    <div class="card bg-dark">
+        <div class="card-body">
+            <p class="text-white paragraph-title mb-4 animated slideInDown text-center">
+                @lang('landing.compro_file.paragraph')
+            </p>
+            <form id="fileRequestForm" method="POST">
+                <div class="form-group my-3">
+                    <label for="userEmail" class="text-white">@lang('landing.compro_file.email_input'):</label>
+                    <input type="email" name="email" id="userEmail" class="form-control" required>
+                </div>
+                <div class="text-center">
+                    <button class="btn-primary-custom" type="submit">@lang('landing.compro_file.button')</button>
+                </div>
+            </form>
         </div>
     </div>
 </x-flip-bounce-modal>

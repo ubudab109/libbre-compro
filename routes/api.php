@@ -28,4 +28,5 @@ Route::group(['middleware' => 'auth:sanctum:users'], function () {
     Route::post('update-company-setting', [CompanySettingController::class, 'updateCompanySetting']);
 });
 Route::post('get-in-touch', [EmailController::class, 'sendGetInTouchEmail'])->name('send.get-in-touch');
+Route::post('send-company-profile', [EmailController::class, 'sendCompanyProfileDocument'])->name('send.company-profile');
 Route::get('analytics', [GoogleAnalyticsController::class, 'index']);

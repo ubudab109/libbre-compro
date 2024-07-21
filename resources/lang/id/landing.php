@@ -252,4 +252,13 @@ return [
         "input_message" => "Pesan Anda",
         "button" => "Kirim Pesan"
     ],
+    "compro_file" => [
+        "title" => "Unduh Dokumen Profil Perusahaan",
+        "paragraph" => "Masukkan email Anda di bawah ini untuk menerima Dokumen Profil Perusahaan kami. Setelah Anda mengirimkan email, kami akan segera mengirimkan dokumen ke alamat email yang diberikan.",
+        "email_input" => "Email Anda",
+        "button" => "Kirim",
+        "button_sending" => "Mengirim...",
+        "notif" => "Terima kasih atas ketertarikan Anda pada Profil Perusahaan kami. Dokumen sedang dikirim. Periksa email Anda",
+    ],
+    "error_global" => "Ada yang salah! Silakan coba lagi nanti.",
 ];

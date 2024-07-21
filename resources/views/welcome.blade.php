@@ -429,10 +429,52 @@
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: 'Something went wrong! Please try again later.',
+                        text: '@lang('landing.error_global')',
                         confirmButtonText: 'OK'
                     }).then(function() {
                         $button.text('@lang('landing.contact_us.button')').prop('disabled', false);
+                    });
+                }
+            });
+        });
+
+        $("#fileRequestForm").submit(function (e) {
+            e.preventDefault();
+            
+            // Change button text
+            var $button = $(this).find('button[type="submit"]');
+            $button.text('@lang('landing.compro_file.button_sending')').prop('disabled', true);
+    
+            // Gather form data
+            var formData = $(this).serialize();
+    
+            // Perform AJAX request
+            $.ajax({
+                url: "{{ route('send.company-profile') }}", // Replace with your route if needed
+                type: 'POST',
+                data: formData,
+                success: function(response) {
+                    // On success
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: '@lang('landing.compro_file.notif')',
+                        confirmButtonText: 'OK'
+                    }).then(function() {
+                        // Reset the form
+                        $('#fileRequestForm')[0].reset();
+                        $button.text('@lang('landing.compro_file.button')').prop('disabled', false);
+                    });
+                },
+                error: function(xhr) {
+                    // On error
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: '@lang('landing.error_global')',
+                        confirmButtonText: 'OK'
+                    }).then(function() {
+                        $button.text('@lang('landing.compro_file.button')').prop('disabled', false);
                     });
                 }
             });
