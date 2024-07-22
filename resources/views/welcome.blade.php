@@ -156,9 +156,23 @@
 </head>
 
 <body>
-    
-    {{-- <div class="music-section">
-    </div> --}}
+    <div id="loader">
+        <div id="background"></div>
+        <div id="logocontainer">
+            <div id="pelogo"><img src="{{asset('/assets/img/logo_footer.png')}}" alt="favicon.png" width="100"></div>
+            <div class="loader"
+                style="left:2vh; top:0; height:2vh; width:0; animation:slide1 1s linear forwards infinite">
+            </div>
+            <div class="loader"
+                style="right:0; top:2vh; width:2vh; height:0; animation:slide2 1s linear forwards infinite; animation-delay:0.5s">
+            </div>
+            <div class="loader"
+                style="right:2vh; bottom:0; height:2vh; width:0; animation:slide3 1s linear forwards infinite"></div>
+            <div class="loader"
+                style="left:0; bottom:2vh; width:2vh; height:0; animation:slide4 1s linear forwards infinite; animation-delay:0.5s">
+            </div>
+        </div>
+    </div>
     <div class="tooltip-container d-none">
         <img src="{{asset('/assets/img/music.png')}}" alt="music" class="music-section" id="music-icon">
         <div class="tooltip" id="tooltip" style="opacity: 1; visibility: hidden;">Feel lonely? Please play this music
@@ -264,23 +278,7 @@
         </footer>
     </div>
 
-    <div id="loader">
-        <div id="background"></div>
-        <div id="logocontainer">
-            <div id="pelogo"><img src="{{asset('/assets/img/logo_footer.png')}}" alt="favicon.png" width="100"></div>
-            <div class="loader"
-                style="left:2vh; top:0; height:2vh; width:0; animation:slide1 1s linear forwards infinite">
-            </div>
-            <div class="loader"
-                style="right:0; top:2vh; width:2vh; height:0; animation:slide2 1s linear forwards infinite; animation-delay:0.5s">
-            </div>
-            <div class="loader"
-                style="right:2vh; bottom:0; height:2vh; width:0; animation:slide3 1s linear forwards infinite"></div>
-            <div class="loader"
-                style="left:0; bottom:2vh; width:2vh; height:0; animation:slide4 1s linear forwards infinite; animation-delay:0.5s">
-            </div>
-        </div>
-    </div>
+
 
     @include('includes.data-modal')
     {{-- @include('layouts.section') --}}
@@ -288,7 +286,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{asset('/assets/lib/wow/wow.min.js')}}"></script>
-    <script src="{{asset('/assets/lib/easing/easing.min.js')}}"></script>
+    {{-- <script src="{{asset('/assets/lib/easing/easing.min.js')}}"></script> --}}
     <script src="{{asset('/assets/lib/waypoints/waypoints.min.js')}}"></script>
     <script src="{{asset('/assets/lib/counterup/counterup.min.js')}}"></script>
     <script src="{{asset('/assets/lib/owlcarousel/owl.carousel.min.js')}}"></script>
@@ -298,7 +296,6 @@
     <script src="{{asset('assets/js/sweetalert2.min.js')}}"></script>
 
     <script defer>
-
         document.addEventListener('DOMContentLoaded', function () {
             const content = document.querySelector('.content');
             const loader = document.getElementById('loader');
@@ -339,129 +336,135 @@
                 // Initial call to ensure elements are correct on load
                 removeOffScreenElements();
             }
+
+            function carousellInit() {
+                $("#team-carousel").owlCarousel({
+                    loop: true,
+                    margin: 20,
+                    nav: true,
+                    center: true,
+                    dots: true,
+                    pagination: true,
+                    navigation: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 2
+                        },
+                        1000: {
+                            items: 3
+                        }
+                    }
+                })
+                $("#serviceCarousel").owlCarousel({
+                    loop: true,
+                    margin: 20,
+                    nav: true,
+                    center: true,
+                    dots: true,
+                    pagination: true,
+                    navigation: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 2
+                        },
+                        1000: {
+                            items: 3
+                        }
+                    }
+                });
+                $("#portfolioServices").owlCarousel({
+                    loop: true,
+                    margin: 20,
+                    nav: true,
+                    dots: true,
+                    center: true,
+                    pagination: true,
+                    navigation: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 2
+                        },
+                        1000: {
+                            items: 3
+                        }
+                    }
+                });
+                $("#comprehensiveService").owlCarousel({
+                    loop: true,
+                    margin: 20,
+                    nav: true,
+                    dots: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        600: {
+                            items: 1
+                        },
+                        1000: {
+                            items: 1
+                        }
+                    }
+                });
+                $("#teamCarousel").owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+                    dots: true,
+                    autoplay: true,
+                    autoplayTimeout: 1000,
+                    autoplayHoverPause: true,
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        300: {
+                            items: 1
+                        },
+                        400: {
+                            items: 1
+                        },
+                        500: {
+                            items: 2
+                        },
+                        600: {
+                            items: 2
+                        },
+                        700: {
+                            items: 3
+                        },
+                        1000: {
+                            items: 4
+                        }
+                    }
+                });
+            }
         
             function simulateLoading() {
                 
                 marquee();
+                carousellInit();
                 let loaded = 0;
                 const interval = setInterval(() => {
                     loaded += Math.random() * 10;
                     if (loaded >= 100) {
                         clearInterval(interval);
+                        carousellInit();
                         loader.style.display = 'none';
                         content.classList.remove('hidden');
                         content.classList.add('loaded');
                         $(".tooltip-container").removeClass('d-none');
                         $(".wa-button").css('display', 'inline-block');
-                        $("#team-carousel").owlCarousel({
-                            loop:true,
-                            margin:20,
-                            nav:true,
-                            center: true,
-                            dots: true,
-                            pagination: true,
-                            navigation: true,
-                            responsive:{
-                                0:{
-                                    items:1
-                                },
-                                600:{
-                                    items:2
-                                },
-                                1000:{
-                                    items:3
-                                }
-                            }
-                        })
-                        $("#serviceCarousel").owlCarousel({
-                            loop:true,
-                            margin:20,
-                            nav:true,
-                            center: true,
-                            dots: true,
-                            pagination: true,
-                            navigation: true,
-                            responsive:{
-                                0:{
-                                    items:1
-                                },
-                                600:{
-                                    items:2
-                                },
-                                1000:{
-                                    items:3
-                                }
-                            }
-                        });
-                        $("#portfolioServices").owlCarousel({
-                            loop:true,
-                            margin:20,
-                            nav:true,
-                            dots: true,
-                            center: true,
-                            pagination: true,
-                            navigation: true,
-                            responsive:{
-                                0:{
-                                    items:1
-                                },
-                                600:{
-                                    items:2
-                                },
-                                1000:{
-                                    items:3
-                                }
-                            }
-                        });
-                        $("#comprehensiveService").owlCarousel({
-                            loop:true,
-                            margin:20,
-                            nav:true,
-                            dots: true,
-                            responsive:{
-                                0:{
-                                    items:1
-                                },
-                                600:{
-                                    items:1
-                                },
-                                1000:{
-                                    items:1
-                                }
-                            }
-                        });
-                        $("#teamCarousel").owlCarousel({
-                            loop: true,
-                            margin: 10,
-                            nav: true,
-                            dots: true,
-                            autoplay: true,
-                            autoplayTimeout: 1000,
-                            autoplayHoverPause: true,
-                            responsive:{
-                                0:{
-                                    items:1
-                                },
-                                300: {
-                                    items: 1
-                                },
-                                400: {
-                                    items: 1
-                                },
-                                500:{
-                                    items:2
-                                },
-                                600:{
-                                    items:2
-                                },
-                                700: {
-                                    items: 3
-                                },
-                                1000:{
-                                    items:4
-                                }
-                            }
-                        });
+                        
                         marquee();
                     }
                 }, 100)
