@@ -149,13 +149,11 @@
 
         .content {
             opacity: 0;
-            display: none;
             /* transition: opacity 1s ease, transform 1s ease; */
         }
 
         .content.loaded {
             opacity: 1;
-            display: contents;
             transform: translateY(0);
 
         }
