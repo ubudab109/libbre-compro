@@ -206,7 +206,7 @@
 <body>
     <div id="loader">
         <div id="background"></div>
-        <div id="logocontainer" onclick=fill()>
+        <div id="logocontainer">
             <div id="pelogo"><img src="{{asset('/assets/img/logo_footer.png')}}" alt="favicon.png" width="100"></div>
             <div class="loader"
                 style="left:2vh; top:0; height:2vh; width:0; animation:slide1 1s linear forwards infinite">
@@ -342,185 +342,175 @@
     <!-- Template Javascript -->
     <script src="{{asset('assets/js/main.js')}}"></script>
     <script src="{{asset('assets/js/sweetalert2.min.js')}}"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            function carouselInit() {
-                $("#team-carousel").owlCarousel({
-                    loop:true,
-                    margin:20,
-                    nav:true,
-                    center: true,
-                    dots: true,
-                    pagination: true,
-                    navigation: true,
-                    responsive:{
-                        0:{
-                            items:1
-                        },
-                        600:{
-                            items:2
-                        },
-                        1000:{
-                            items:3
-                        }
-                    }
-                })
-                $("#serviceCarousel").owlCarousel({
-                    loop:true,
-                    margin:20,
-                    nav:true,
-                    center: true,
-                    dots: true,
-                    pagination: true,
-                    navigation: true,
-                    responsive:{
-                        0:{
-                            items:1
-                        },
-                        600:{
-                            items:2
-                        },
-                        1000:{
-                            items:3
-                        }
-                    }
-                });
-                $("#portfolioServices").owlCarousel({
-                    loop:true,
-                    margin:20,
-                    nav:true,
-                    dots: true,
-                    center: true,
-                    pagination: true,
-                    navigation: true,
-                    responsive:{
-                        0:{
-                            items:1
-                        },
-                        600:{
-                            items:2
-                        },
-                        1000:{
-                            items:3
-                        }
-                    }
-                });
-                $("#comprehensiveService").owlCarousel({
-                    loop:true,
-                    margin:20,
-                    nav:true,
-                    dots: true,
-                    responsive:{
-                        0:{
-                            items:1
-                        },
-                        600:{
-                            items:1
-                        },
-                        1000:{
-                            items:1
-                        }
-                    }
-                });
-                $("#teamCarousel").owlCarousel({
-                    loop: true,
-                    margin: 10,
-                    nav: true,
-                    dots: true,
-                    autoplay: true,
-                    autoplayTimeout: 1000,
-                    autoplayHoverPause: true,
-                    responsive:{
-                        0:{
-                            items:1
-                        },
-                        300: {
-                            items: 1
-                        },
-                        400: {
-                            items: 1
-                        },
-                        500:{
-                            items:2
-                        },
-                        600:{
-                            items:2
-                        },
-                        700: {
-                            items: 3
-                        },
-                        1000:{
-                            items:4
-                        }
-                    }
-                });
-            }
-            carouselInit();
-        });
-    </script>
-    <script>
-        var full=false;
 
-        function fill(){
-            full=!full;
-            document.getElementById("logocontainer").style.backgroundColor=full?"#3ebffa":"transparent";
-        }
-        $(document).ready(function () {
-            function marquee() {
-                var $scorri = $(".scorri");
-                var $tithome = $(".tithome");
-                var itemWidth = $tithome.outerWidth(true); // Includes padding and margin
+    <script>
+
+        function marquee() {
+            var $scorri = $(".scorri");
+            var $tithome = $(".tithome");
+            var itemWidth = $tithome.outerWidth(true); // Includes padding and margin
+            
+            // Clone elements initially
+            for (var i = 0; i < 2; i++) { // Adjust number of clones if needed
+                $tithome.clone().appendTo($scorri);
+            }
+
+            // Function to remove elements that have gone off-screen
+            function removeOffScreenElements() {
+                var scrollLeft = $scorri.scrollLeft();
+                var elements = $scorri.find(".tithome");
                 
-                // Clone elements initially
-                for (var i = 0; i < 2; i++) { // Adjust number of clones if needed
+                elements.each(function() {
+                    var offsetLeft = $(this).offset().left;
+                    if (offsetLeft + $(this).outerWidth() < scrollLeft) {
+                        $(this).remove();
+                    }
+                });
+
+                // Re-clone the elements if needed
+                var containerWidth = $scorri.width();
+                var totalWidth = $scorri.find(".tithome").length * itemWidth;
+                
+                if (totalWidth < containerWidth * 2) {
                     $tithome.clone().appendTo($scorri);
                 }
+            }
 
-                // Function to remove elements that have gone off-screen
-                function removeOffScreenElements() {
-                    var scrollLeft = $scorri.scrollLeft();
-                    var elements = $scorri.find(".tithome");
-                    
-                    elements.each(function() {
-                        var offsetLeft = $(this).offset().left;
-                        if (offsetLeft + $(this).outerWidth() < scrollLeft) {
-                            $(this).remove();
-                        }
-                    });
+            // Check for off-screen elements on scroll
+            $scorri.on('scroll', removeOffScreenElements);
 
-                    // Re-clone the elements if needed
-                    var containerWidth = $scorri.width();
-                    var totalWidth = $scorri.find(".tithome").length * itemWidth;
-                    
-                    if (totalWidth < containerWidth * 2) {
-                        $tithome.clone().appendTo($scorri);
+            // Initial call to ensure elements are correct on load
+            removeOffScreenElements();
+        }
+
+        function carouselInit() {
+            $("#team-carousel").owlCarousel({
+                loop:true,
+                margin:20,
+                nav:true,
+                center: true,
+                dots: true,
+                pagination: true,
+                navigation: true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:2
+                    },
+                    1000:{
+                        items:3
                     }
                 }
+            })
+            $("#serviceCarousel").owlCarousel({
+                loop:true,
+                margin:20,
+                nav:true,
+                center: true,
+                dots: true,
+                pagination: true,
+                navigation: true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:2
+                    },
+                    1000:{
+                        items:3
+                    }
+                }
+            });
+            $("#portfolioServices").owlCarousel({
+                loop:true,
+                margin:20,
+                nav:true,
+                dots: true,
+                center: true,
+                pagination: true,
+                navigation: true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:2
+                    },
+                    1000:{
+                        items:3
+                    }
+                }
+            });
+            $("#comprehensiveService").owlCarousel({
+                loop:true,
+                margin:20,
+                nav:true,
+                dots: true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:1
+                    },
+                    1000:{
+                        items:1
+                    }
+                }
+            });
+            $("#teamCarousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 1000,
+                autoplayHoverPause: true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    300: {
+                        items: 1
+                    },
+                    400: {
+                        items: 1
+                    },
+                    500:{
+                        items:2
+                    },
+                    600:{
+                        items:2
+                    },
+                    700: {
+                        items: 3
+                    },
+                    1000:{
+                        items:4
+                    }
+                }
+            });
+        }
+        
+        function simulateLoading() {
+            $("#loader").addClass('d-none');
+            $(".content").removeClass('d-none');
+            $(".content").css('opacity', '1');
+            $(".tooltip-container").removeClass('d-none');
+            $(".wa-button").css('display', 'inline-block');
+            marquee();
+        }
 
-                // Check for off-screen elements on scroll
-                $scorri.on('scroll', removeOffScreenElements);
-
-                // Initial call to ensure elements are correct on load
-                removeOffScreenElements();
-            }
-
-            
-
-            function simulateLoading() {
-                $("#loader").addClass('d-none');
-                $(".content").removeClass('d-none');
-                $(".content").css('opacity', '1');
-                $(".tooltip-container").removeClass('d-none');
-                $(".wa-button").css('display', 'inline-block');
-                marquee();
-            }
-
+        $(document).ready(function () {
+            marquee();
+            carouselInit();
             setTimeout(() => {
                 simulateLoading();
             }, 2000);
-            marquee();
-            carouselInit();
-
+            
             const musicIcon = document.getElementById('music-icon');
             const bgMusic = document.getElementById('bg-music');
             const tooltip = document.getElementById('tooltip');
