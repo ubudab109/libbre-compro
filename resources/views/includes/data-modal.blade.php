@@ -3,10 +3,10 @@
         <div class="card-body">
             <ul class="list-check text-white">
                 <li class="mb-4">
-                    @lang('landing.services.data.modal.corparate_branding.title')
+                    @lang('landing.services.data.modal.corporate_branding.title')
                     <ul style="list-style: none">
                         <li>
-                            @lang('landing.services.data.modal.corparate_branding.desc')
+                            @lang('landing.services.data.modal.corporate_branding.desc')
                         </li>
                     </ul>
                 </li>
