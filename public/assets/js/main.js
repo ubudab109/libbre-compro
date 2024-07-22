@@ -10,8 +10,8 @@
         }, 1);
     };
     spinner();
-    
-    
+
+
     // Initiate the wowjs
     new WOW().init();
 
@@ -31,8 +31,8 @@
         delay: 10,
         time: 2000
     });
-    
-    
+
+
     // Back to top button
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
@@ -42,7 +42,7 @@
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
         return false;
     });
 
@@ -55,12 +55,122 @@
         dots: true,
         loop: true,
         nav: true,
-        navText : [
+        navText: [
             '<i class="bi bi-chevron-left"></i>',
             '<i class="bi bi-chevron-right"></i>'
         ]
     });
-    
-    
+
+    $("#team-carousel").owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        center: true,
+        dots: true,
+        pagination: true,
+        navigation: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+        }
+    })
+    $("#serviceCarousel").owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        center: true,
+        dots: true,
+        pagination: true,
+        navigation: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+        }
+    });
+    $("#portfolioServices").owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        dots: true,
+        center: true,
+        pagination: true,
+        navigation: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 2
+            },
+            1000: {
+                items: 3
+            }
+        }
+    });
+    $("#comprehensiveService").owlCarousel({
+        loop: true,
+        margin: 20,
+        nav: true,
+        dots: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            600: {
+                items: 1
+            },
+            1000: {
+                items: 1
+            }
+        }
+    });
+    $("#teamCarousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 1000,
+        autoplayHoverPause: true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            300: {
+                items: 1
+            },
+            400: {
+                items: 1
+            },
+            500: {
+                items: 2
+            },
+            600: {
+                items: 2
+            },
+            700: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            }
+        }
+    });
+
+
 })(jQuery);
 
