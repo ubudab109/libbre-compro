@@ -382,8 +382,8 @@
             // Initial call to ensure elements are correct on load
             removeOffScreenElements();
         }
-
-        function carouselInit() {
+        
+        function simulateLoading() {
             $("#team-carousel").owlCarousel({
                 loop:true,
                 margin:20,
@@ -493,9 +493,6 @@
                     }
                 }
             });
-        }
-        
-        function simulateLoading() {
             $("#loader").addClass('d-none');
             $(".content").removeClass('d-none');
             $(".content").css('opacity', '1');
@@ -506,7 +503,6 @@
 
         document.addEventListener('DOMContentLoaded', function () {
             marquee();
-            carouselInit();
             setTimeout(() => {
                 simulateLoading();
             }, 2000);
