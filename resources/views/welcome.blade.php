@@ -343,7 +343,7 @@
     <script src="{{asset('assets/js/main.js')}}"></script>
     <script src="{{asset('assets/js/sweetalert2.min.js')}}"></script>
 
-    <script>
+    <script defer>
 
         function marquee() {
             var $scorri = $(".scorri");
