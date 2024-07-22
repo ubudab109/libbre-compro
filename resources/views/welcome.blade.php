@@ -333,7 +333,7 @@
     <script src="{{asset('assets/js/main.js')}}"></script>
     <script src="{{asset('assets/js/sweetalert2.min.js')}}"></script>
 
-    <script defer>
+    <script>
         function marquee() {
             var $scorri = $(".scorri");
             var $tithome = $(".tithome");
