@@ -11,7 +11,7 @@ body {
 }
 
 .bg-dark {
-    background-color: #1D1D1D !important;
+    background-color: #1d1d1d !important;
 }
 
 /* FONT POPPINS */
@@ -889,12 +889,6 @@ ul.list-check {
     z-index: 1;
 }
 
-@media (min-width: 468px) {
-    .footer-info {
-        justify-content: start;
-    }
-}
-
 @media (max-width: 467px) {
     .footer-info {
         justify-content: center;
@@ -1054,7 +1048,7 @@ ul.list-check {
 }
 
 .icon-right-team button {
-    background: #1D1D1D;
+    background: #1d1d1d;
     border-radius: 50%;
 }
 
@@ -1072,7 +1066,7 @@ ul.list-check {
 }
 
 .modal-content {
-    background: #1D1D1D !important;
+    background: #1d1d1d !important;
 }
 
 .modal-title {
@@ -1083,7 +1077,8 @@ ul.list-check {
     color: white;
 }
 .btn-close {
-    background: rgba(0, 0, 0, 0) url('/assets/img/svg/close-svgrepo-com.svg') center / 1em auto no-repeat;
+    background: rgba(0, 0, 0, 0) url("/assets/img/svg/close-svgrepo-com.svg")
+        center / 1em auto no-repeat;
 }
 
 /* BOTTOM RIGHT AND LEFT CORNER */
@@ -1097,7 +1092,7 @@ ul.list-check {
     height: 50px;
     bottom: 40px;
     background-color: #fff;
-    color: #FFF;
+    color: #fff;
     border-radius: 50px;
     text-align: center;
     font-size: 30px;
@@ -1112,8 +1107,12 @@ ul.list-check {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .tooltip {
@@ -1152,4 +1151,21 @@ ul.list-check {
     -o-transition: all 0.3s ease-out 0s;
     transition: all 0.3s ease-out 0s;
     display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-info {
+        flex-direction: column !important;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-info-text {
+        margin: 0 !important;
+    }
+
+    .footer-info svg {
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
 }
