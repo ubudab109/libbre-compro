@@ -504,7 +504,7 @@
             marquee();
         }
 
-        $(document).ready(function () {
+        document.addEventListener('DOMContentLoaded', function () {
             marquee();
             carouselInit();
             setTimeout(() => {
