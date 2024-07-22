@@ -290,12 +290,7 @@
     <script src="{{asset('/assets/lib/waypoints/waypoints.min.js')}}"></script>
     <script src="{{asset('/assets/lib/counterup/counterup.min.js')}}"></script>
     <script src="{{asset('/assets/lib/owlcarousel/owl.carousel.min.js')}}"></script>
-
-    <!-- Template Javascript -->
-    <script src="{{asset('assets/js/main.js')}}"></script>
-    <script src="{{asset('assets/js/sweetalert2.min.js')}}"></script>
-
-    <script defer>
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
             const content = document.querySelector('.content');
             const loader = document.getElementById('loader');
@@ -587,6 +582,11 @@
             });
         });
     </script>
+    <!-- Template Javascript -->
+    <script src="{{asset('assets/js/main.js')}}"></script>
+    <script src="{{asset('assets/js/sweetalert2.min.js')}}"></script>
+
+    
     @yield('script')
 </body>
 
