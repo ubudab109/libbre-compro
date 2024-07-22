@@ -392,6 +392,8 @@
                 $("#loader").addClass('d-none');
                 $(".content").removeClass('d-none');
                 $(".content").css('opacity', '1');
+                $(".tooltip-container").removeClass('d-none');
+                $(".wa-button").css('display', 'inline-block');
                 marquee();
             }
 
