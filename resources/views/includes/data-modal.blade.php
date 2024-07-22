@@ -360,7 +360,7 @@
                 <b>@lang('landing.modal_see_more.desc_ten')</b>. @lang('landing.modal_see_more.desc_eleven')
             </p>
             <div class="d-flex flex-wrap">
-                <div class="col-lg-6 col-md-12 mb-3 text-center">
+                <div class="col-lg-6 col-md-12 text-center">
                     <div class="card bg-dark h-100 border-0">
                         <div class="card-body">
                             <div class="row py-2">
