@@ -493,20 +493,19 @@
                     }
                 }
             });
-            $("#loader").addClass('d-none');
-            $(".content").removeClass('d-none');
-            $(".content").css('opacity', '1');
-            $(".tooltip-container").removeClass('d-none');
-            $(".wa-button").css('display', 'inline-block');
             marquee();
+            setInterval(() => {
+                $("#loader").addClass('d-none');
+                $(".content").removeClass('d-none');
+                $(".content").css('opacity', '1');
+                $(".tooltip-container").removeClass('d-none');
+                $(".wa-button").css('display', 'inline-block');
+            }, 3000);
         }
 
         document.addEventListener('DOMContentLoaded', function () {
+            simulateLoading();
             marquee();
-            setTimeout(() => {
-                simulateLoading();
-            }, 2000);
-            
             const musicIcon = document.getElementById('music-icon');
             const bgMusic = document.getElementById('bg-music');
             const tooltip = document.getElementById('tooltip');
