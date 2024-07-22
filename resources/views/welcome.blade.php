@@ -204,15 +204,6 @@
 </head>
 
 <body>
-    {{-- <div id="loader">
-        <span id="text">
-            <img src="{{asset('/assets/img/logo_footer.png')}}" alt="logo_footer.png" width="100">
-        </span>
-        <span id="percent" style="font-size: 10px;">0%</span>
-        <div id="bar">
-            <div class="progress"></div>
-        </div>
-    </div> --}}
     <div id="loader">
         <div id="background"></div>
         <div id="logocontainer" onclick=fill()>
@@ -365,7 +356,9 @@
                 $(".content").css('opacity', '1');
             }
 
-            simulateLoading();
+            setTimeout(() => {
+                simulateLoading();
+            }, 2000);
 
             const musicIcon = document.getElementById('music-icon');
             const bgMusic = document.getElementById('bg-music');
