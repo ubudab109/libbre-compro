@@ -208,7 +208,8 @@
         <div id="background"></div>
         <div id="logocontainer" onclick=fill()>
             <div id="pelogo"><img src="{{asset('/assets/img/logo_footer.png')}}" alt="favicon.png" width="100"></div>
-            <div class="loader" style="left:2vh; top:0; height:2vh; width:0; animation:slide1 1s linear forwards infinite">
+            <div class="loader"
+                style="left:2vh; top:0; height:2vh; width:0; animation:slide1 1s linear forwards infinite">
             </div>
             <div class="loader"
                 style="right:0; top:2vh; width:2vh; height:0; animation:slide2 1s linear forwards infinite; animation-delay:0.5s">
@@ -350,15 +351,54 @@
             document.getElementById("logocontainer").style.backgroundColor=full?"#3ebffa":"transparent";
         }
         $(document).ready(function () {
+            function marquee() {
+                var $scorri = $(".scorri");
+                var $tithome = $(".tithome");
+                var itemWidth = $tithome.outerWidth(true); // Includes padding and margin
+                
+                // Clone elements initially
+                for (var i = 0; i < 2; i++) { // Adjust number of clones if needed
+                    $tithome.clone().appendTo($scorri);
+                }
+
+                // Function to remove elements that have gone off-screen
+                function removeOffScreenElements() {
+                    var scrollLeft = $scorri.scrollLeft();
+                    var elements = $scorri.find(".tithome");
+                    
+                    elements.each(function() {
+                        var offsetLeft = $(this).offset().left;
+                        if (offsetLeft + $(this).outerWidth() < scrollLeft) {
+                            $(this).remove();
+                        }
+                    });
+
+                    // Re-clone the elements if needed
+                    var containerWidth = $scorri.width();
+                    var totalWidth = $scorri.find(".tithome").length * itemWidth;
+                    
+                    if (totalWidth < containerWidth * 2) {
+                        $tithome.clone().appendTo($scorri);
+                    }
+                }
+
+                // Check for off-screen elements on scroll
+                $scorri.on('scroll', removeOffScreenElements);
+
+                // Initial call to ensure elements are correct on load
+                removeOffScreenElements();
+            }
             function simulateLoading() {
                 $("#loader").addClass('d-none');
                 $(".content").removeClass('d-none');
                 $(".content").css('opacity', '1');
+                marquee();
             }
 
             setTimeout(() => {
                 simulateLoading();
             }, 2000);
+            marquee();
 
             const musicIcon = document.getElementById('music-icon');
             const bgMusic = document.getElementById('bg-music');
