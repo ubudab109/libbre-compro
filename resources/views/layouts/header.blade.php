@@ -38,13 +38,13 @@
         <section id="home">
             <div class="row mb-5 hero-row mt-5">
                 <div class="col-lg-12 text-center">
-                    <div class="text-orange mb-3 small-title animated slideInRight">
+                    <div class="text-orange mb-3 small-title">
                         @lang('landing.header.welcome')
                     </div>
-                    <h1 class="display-4 text-white high-title mb-4 animated slideInRight">
+                    <h1 class="display-4 text-white high-title mb-4">
                         @lang('landing.header.creative')
                     </h1>
-                    <p class="text-white paragraph-title mb-4 animated slideInRight">
+                    <p class="text-white paragraph-title mb-4">
                         "Transforming the Food & Beverage Industry
                         with Creativity and Innovation, we Helping For F&B Businnes"
                     </p>

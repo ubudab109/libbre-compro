@@ -32,57 +32,6 @@
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
     <style>
         /* Inline critical loader styles to avoid FOUC */
-        #loader {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            /* width: 50%; */
-            /* height: 100vh; */
-            background: #000;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            color: white;
-            font-size: 2em;
-            overflow: hidden;
-            align-self: center;
-            align-content: center;
-            margin-top: auto;
-            margin-bottom: auto;
-        }
-
-        #loader img {
-            max-width: 200px;
-            margin-bottom: 20px;
-        }
-
-        #percent {
-            margin-bottom: 10px;
-        }
-
-        #bar {
-            width: 100%;
-            height: 8px;
-            background: #1D1D1D;
-        }
-
-        #bar .progress {
-            height: 100%;
-            width: 0;
-            background: #fff;
-        }
-
-        .content {
-            opacity: 0;
-            /* transition: opacity 1s ease, transform 1s ease; */
-        }
-
-        .content.loaded {
-            opacity: 1;
-            transform: translateY(0);
-        }
 
         .icon-footer {
             width: 30px;
@@ -129,9 +78,6 @@
             width: 30vh;
             height: 30vh;
             background: #1d1d1d;
-            /* background: -moz-linear-gradient(-45deg, #34324b 0%, #161222 100%);
-            background: -webkit-linear-gradient(-45deg, #34324b 0%, #161222 100%);
-            background: linear-gradient(135deg, #34324b 0%, #161222 100%); */
             background-size: contain;
             font-family: Trebuchet MS, sans-serif;
             font-size: 20vh;
@@ -147,18 +93,13 @@
             background-color: #ff9800;
         }
 
-        .content {
-            opacity: 0;
-            /* transition: opacity 1s ease, transform 1s ease; */
+        .content.hidden {
+            display: none;
         }
 
         .content.loaded {
-            opacity: 1;
-            transform: translateY(0);
-
+            display: initial;
         }
-
-        /*Pretty complex animation, so each side needs its own @keyframes.*/
 
         @keyframes slide1 {
             50% {
@@ -215,23 +156,7 @@
 </head>
 
 <body>
-    <div id="loader">
-        <div id="background"></div>
-        <div id="logocontainer">
-            <div id="pelogo"><img src="{{asset('/assets/img/logo_footer.png')}}" alt="favicon.png" width="100"></div>
-            <div class="loader"
-                style="left:2vh; top:0; height:2vh; width:0; animation:slide1 1s linear forwards infinite">
-            </div>
-            <div class="loader"
-                style="right:0; top:2vh; width:2vh; height:0; animation:slide2 1s linear forwards infinite; animation-delay:0.5s">
-            </div>
-            <div class="loader"
-                style="right:2vh; bottom:0; height:2vh; width:0; animation:slide3 1s linear forwards infinite"></div>
-            <div class="loader"
-                style="left:0; bottom:2vh; width:2vh; height:0; animation:slide4 1s linear forwards infinite; animation-delay:0.5s">
-            </div>
-        </div>
-    </div>
+    
     {{-- <div class="music-section">
     </div> --}}
     <div class="tooltip-container d-none">
@@ -248,7 +173,7 @@
         Your browser does not support the audio element.
     </audio>
 
-    <div class="content">
+    <div class="content hidden">
         @include('layouts.header')
         @include('sections.about-services')
 
@@ -339,6 +264,24 @@
         </footer>
     </div>
 
+    <div id="loader">
+        <div id="background"></div>
+        <div id="logocontainer">
+            <div id="pelogo"><img src="{{asset('/assets/img/logo_footer.png')}}" alt="favicon.png" width="100"></div>
+            <div class="loader"
+                style="left:2vh; top:0; height:2vh; width:0; animation:slide1 1s linear forwards infinite">
+            </div>
+            <div class="loader"
+                style="right:0; top:2vh; width:2vh; height:0; animation:slide2 1s linear forwards infinite; animation-delay:0.5s">
+            </div>
+            <div class="loader"
+                style="right:2vh; bottom:0; height:2vh; width:0; animation:slide3 1s linear forwards infinite"></div>
+            <div class="loader"
+                style="left:0; bottom:2vh; width:2vh; height:0; animation:slide4 1s linear forwards infinite; animation-delay:0.5s">
+            </div>
+        </div>
+    </div>
+
     @include('includes.data-modal')
     {{-- @include('layouts.section') --}}
     <!-- JavaScript Libraries -->
@@ -406,6 +349,7 @@
                     if (loaded >= 100) {
                         clearInterval(interval);
                         loader.style.display = 'none';
+                        content.classList.remove('hidden');
                         content.classList.add('loaded');
                         $(".tooltip-container").removeClass('d-none');
                         $(".wa-button").css('display', 'inline-block');
