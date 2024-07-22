@@ -149,12 +149,13 @@
 
         .content {
             opacity: 0;
+            display: none;
             /* transition: opacity 1s ease, transform 1s ease; */
         }
 
         .content.loaded {
             opacity: 1;
-            transform: translateY(0);
+            display: contents;
         }
 
         /*Pretty complex animation, so each side needs its own @keyframes.*/
