@@ -237,7 +237,7 @@
         Your browser does not support the audio element.
     </audio>
 
-    <div class="content d-none">
+    <div class="content" style="opacity: 0;">
         @include('layouts.header')
         @include('sections.about-services')
 
@@ -495,7 +495,6 @@
             marquee();
             setInterval(() => {
                 $("#loader").addClass('d-none');
-                $(".content").removeClass('d-none');
                 $(".content").css('opacity', '1');
                 $(".tooltip-container").removeClass('d-none');
                 $(".wa-button").css('display', 'inline-block');
