@@ -34,10 +34,10 @@
         /* Inline critical loader styles to avoid FOUC */
         #loader {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
+            top: 50%;
+            left: 50%;
+            /* width: 50%; */
+            /* height: 100vh; */
             background: #000;
             z-index: 9999;
             display: flex;
@@ -47,6 +47,10 @@
             color: white;
             font-size: 2em;
             overflow: hidden;
+            align-self: center;
+            align-content: center;
+            margin-top: auto;
+            margin-bottom: auto;
         }
 
         #loader img {
@@ -59,7 +63,7 @@
         }
 
         #bar {
-            width: 14%;
+            width: 100%;
             height: 8px;
             background: #1D1D1D;
         }
@@ -72,13 +76,131 @@
 
         .content {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease, transform 1s ease;
+            /* transition: opacity 1s ease, transform 1s ease; */
         }
 
         .content.loaded {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        .icon-footer {
+            width: 30px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 576px) {
+            .icon-footer {
+                width: 24px;
+            }
+
+            .footer-info-text {
+                font-size: 14px;
+            }
+        }
+
+        #background {
+            display: block;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+        }
+
+        #logocontainer {
+            display: block;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 34vh;
+            height: 34vh;
+            margin-left: -17vh;
+            margin-top: -17vh;
+            overflow: hidden;
+            transition: background-color 500ms;
+            cursor: pointer;
+        }
+
+        #pelogo {
+            display: block;
+            position: absolute;
+            left: 2vh;
+            top: 2vh;
+            width: 30vh;
+            height: 30vh;
+            background: #1d1d1d;
+            /* background: -moz-linear-gradient(-45deg, #34324b 0%, #161222 100%);
+            background: -webkit-linear-gradient(-45deg, #34324b 0%, #161222 100%);
+            background: linear-gradient(135deg, #34324b 0%, #161222 100%); */
+            background-size: contain;
+            font-family: Trebuchet MS, sans-serif;
+            font-size: 20vh;
+            font-weight: bold;
+            color: #3ebffa;
+            text-align: center;
+            line-height: 30vh;
+        }
+
+        .loader {
+            display: block;
+            position: absolute;
+            background-color: #ff9800;
+        }
+
+        .content {
+            opacity: 0;
+            /* transition: opacity 1s ease, transform 1s ease; */
+        }
+
+        .content.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /*Pretty complex animation, so each side needs its own @keyframes.*/
+
+        @keyframes slide1 {
+            50% {
+                width: 32vh;
+                margin-left: 0;
+            }
+
+            100% {
+                margin-left: 32vh;
+            }
+        }
+
+        @keyframes slide2 {
+            50% {
+                height: 32vh;
+                margin-top: 0;
+            }
+
+            100% {
+                margin-top: 32vh;
+            }
+        }
+
+        @keyframes slide3 {
+            50% {
+                width: 32vh;
+                margin-right: 0;
+            }
+
+            100% {
+                margin-right: 32vh;
+            }
+        }
+
+        @keyframes slide4 {
+            50% {
+                height: 32vh;
+                margin-bottom: 0
+            }
+
+            100% {
+                margin-bottom: 32vh;
+            }
         }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-H5PRL106R3"></script>
@@ -93,25 +215,32 @@
 
 <body>
     <div id="loader">
-        <span id="text">
-            <img src="{{asset('/assets/img/logo_footer.png')}}" alt="logo_footer.png" width="100">
-        </span>
-        <span id="percent" style="font-size: 10px;">0%</span>
-        <div id="bar">
-            <div class="progress"></div>
+        <div id="background"></div>
+        <div id="logocontainer">
+            <div id="pelogo"><img src="{{asset('/assets/img/logo_footer.png')}}" alt="favicon.png" width="100"></div>
+            <div class="loader"
+                style="left:2vh; top:0; height:2vh; width:0; animation:slide1 1s linear forwards infinite">
+            </div>
+            <div class="loader"
+                style="right:0; top:2vh; width:2vh; height:0; animation:slide2 1s linear forwards infinite; animation-delay:0.5s">
+            </div>
+            <div class="loader"
+                style="right:2vh; bottom:0; height:2vh; width:0; animation:slide3 1s linear forwards infinite"></div>
+            <div class="loader"
+                style="left:0; bottom:2vh; width:2vh; height:0; animation:slide4 1s linear forwards infinite; animation-delay:0.5s">
+            </div>
         </div>
     </div>
-
     {{-- <div class="music-section">
     </div> --}}
-    <div class="tooltip-container">
+    <div class="tooltip-container d-none">
         <img src="{{asset('/assets/img/music.png')}}" alt="music" class="music-section" id="music-icon">
         <div class="tooltip" id="tooltip" style="opacity: 1; visibility: hidden;">Feel lonely? Please play this music
         </div>
     </div>
 
     <a target="_blank" href="https://wa.me/62811140172?text=Halo%2C+Saya+ingin+berkonsultasi+mengenai+bisnis+Saya."
-        class="wa-button" style="display: inline-block;"><img src="{{asset('/assets/img/whatsapp.png')}}" alt=""
+        class="wa-button" style="display: hidden;"><img src="{{asset('/assets/img/whatsapp.png')}}" alt=""
             width="55"></a>
     <audio id="bg-music" autoplay>
         <source src="{{ asset('assets/music/bg_music.mp3') }}" type="audio/mp3">
@@ -140,7 +269,7 @@
 
         @include('sections.contact-us')
 
-        <div class="container-flue" style="background-color: #1D1D1D; padding-top: 40px;" id="page-content">
+        <div class="container-fluid" style="background-color: #1D1D1D; padding-top: 40px;" id="page-content">
             <div class="container text-center">
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-md-12">
@@ -166,7 +295,8 @@
                             Transforming the Food & Beverage Industry with Creativity and Innovation, we Helping For F&B
                             Businnes
                         </p>
-                        <div class="text-white icon-footer mb-5 mt-5">
+                        <div class="text-white icon-footer mb-5 mt-5"
+                            style="display: flex;justify-content: center;width: 100%;">
 
                             {{-- INSTAGRAM --}}
                             <a href="https://www.instagram.com/libbre_creative/" target="_blank" rel="noreferrer">
@@ -223,21 +353,61 @@
     <script src="{{asset('assets/js/main.js')}}"></script>
     <script src="{{asset('assets/js/sweetalert2.min.js')}}"></script>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const loader = document.getElementById('loader');
-            const percent = document.getElementById('percent');
-            const progress = document.querySelector('#bar .progress');
+    <script defer>
+
+        document.addEventListener('DOMContentLoaded', function () {
             const content = document.querySelector('.content');
-            document.body.style.overflow = "hidden";
+            const loader = document.getElementById('loader');
+            function marquee() {
+                var $scorri = $(".scorri");
+                var $tithome = $(".tithome");
+                var itemWidth = $tithome.outerWidth(true); // Includes padding and margin
+                
+                // Clone elements initially
+                for (var i = 0; i < 2; i++) { // Adjust number of clones if needed
+                    $tithome.clone().appendTo($scorri);
+                }
+
+                // Function to remove elements that have gone off-screen
+                function removeOffScreenElements() {
+                    var scrollLeft = $scorri.scrollLeft();
+                    var elements = $scorri.find(".tithome");
+                    
+                    elements.each(function() {
+                        var offsetLeft = $(this).offset().left;
+                        if (offsetLeft + $(this).outerWidth() < scrollLeft) {
+                            $(this).remove();
+                        }
+                    });
+
+                    // Re-clone the elements if needed
+                    var containerWidth = $scorri.width();
+                    var totalWidth = $scorri.find(".tithome").length * itemWidth;
+                    
+                    if (totalWidth < containerWidth * 2) {
+                        $tithome.clone().appendTo($scorri);
+                    }
+                }
+
+                // Check for off-screen elements on scroll
+                $scorri.on('scroll', removeOffScreenElements);
+
+                // Initial call to ensure elements are correct on load
+                removeOffScreenElements();
+            }
+        
             function simulateLoading() {
+                
+                marquee();
                 let loaded = 0;
                 const interval = setInterval(() => {
-                    loaded += Math.random() * 10; // Random increment to simulate loading progress
-                    percent.textContent = `${Math.floor(loaded)}%`;
-                    progress.style.width = `${loaded}%`;
+                    loaded += Math.random() * 10;
                     if (loaded >= 100) {
                         clearInterval(interval);
+                        loader.style.display = 'none';
+                        content.classList.add('loaded');
+                        $(".tooltip-container").removeClass('d-none');
+                        $(".wa-button").css('display', 'inline-block');
                         $("#team-carousel").owlCarousel({
                             loop:true,
                             margin:20,
@@ -347,23 +517,12 @@
                                 }
                             }
                         });
-                        var elements = $('div.tithome div').length;
-
-                        for(var i=0;i < elements; i++){
-                            $(".tithome").clone().prependTo( ".scorri" );
-                        };
-
-                        var liEle = [];
-                        var liEle = $(".tithome div");
-                        loader.style.display = 'none'; // Hide loader after completion
-                        content.classList.add('loaded'); // Trigger content animation
-                        document.body.style.overflow = "unset"; // Restore overflow once loaded
+                        marquee();
                     }
-                }, 100); // Update every 100ms
+                }, 100)
             }
-
             simulateLoading();
-
+            
             const musicIcon = document.getElementById('music-icon');
             const bgMusic = document.getElementById('bg-music');
             const tooltip = document.getElementById('tooltip');
