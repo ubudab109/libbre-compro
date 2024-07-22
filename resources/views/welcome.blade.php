@@ -34,10 +34,10 @@
         /* Inline critical loader styles to avoid FOUC */
         #loader {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
+            top: 50%;
+            left: 50%;
+            /* width: 50%; */
+            /* height: 100vh; */
             background: #000;
             z-index: 9999;
             display: flex;
@@ -47,6 +47,10 @@
             color: white;
             font-size: 2em;
             overflow: hidden;
+            align-self: center;
+            align-content: center;
+            margin-top: auto;
+            margin-bottom: auto;
         }
 
         #loader img {
@@ -59,7 +63,7 @@
         }
 
         #bar {
-            width: 14%;
+            width: 100%;
             height: 8px;
             background: #1D1D1D;
         }
@@ -72,13 +76,121 @@
 
         .content {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease, transform 1s ease;
+            /* transition: opacity 1s ease, transform 1s ease; */
         }
 
         .content.loaded {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        .icon-footer {
+            width: 30px;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 576px) {
+            .icon-footer {
+                width: 24px;
+            }
+
+            .footer-info-text {
+                font-size: 14px;
+            }
+        }
+
+        #background {
+            display: block;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+        }
+
+        #logocontainer {
+            display: block;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 34vh;
+            height: 34vh;
+            margin-left: -17vh;
+            margin-top: -17vh;
+            overflow: hidden;
+            transition: background-color 500ms;
+            cursor: pointer;
+        }
+
+        #pelogo {
+            display: block;
+            position: absolute;
+            left: 2vh;
+            top: 2vh;
+            width: 30vh;
+            height: 30vh;
+            background: #1d1d1d;
+            /* background: -moz-linear-gradient(-45deg, #34324b 0%, #161222 100%);
+            background: -webkit-linear-gradient(-45deg, #34324b 0%, #161222 100%);
+            background: linear-gradient(135deg, #34324b 0%, #161222 100%); */
+            background-size: contain;
+            font-family: Trebuchet MS, sans-serif;
+            font-size: 20vh;
+            font-weight: bold;
+            color: #3ebffa;
+            text-align: center;
+            line-height: 30vh;
+        }
+
+        .loader {
+            display: block;
+            position: absolute;
+            background-color: #ff9800;
+        }
+
+        /*Pretty complex animation, so each side needs its own @keyframes.*/
+
+        @keyframes slide1 {
+            50% {
+                width: 32vh;
+                margin-left: 0;
+            }
+
+            100% {
+                margin-left: 32vh;
+            }
+        }
+
+        @keyframes slide2 {
+            50% {
+                height: 32vh;
+                margin-top: 0;
+            }
+
+            100% {
+                margin-top: 32vh;
+            }
+        }
+
+        @keyframes slide3 {
+            50% {
+                width: 32vh;
+                margin-right: 0;
+            }
+
+            100% {
+                margin-right: 32vh;
+            }
+        }
+
+        @keyframes slide4 {
+            50% {
+                height: 32vh;
+                margin-bottom: 0
+            }
+
+            100% {
+                margin-bottom: 32vh;
+            }
         }
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-H5PRL106R3"></script>
@@ -92,7 +204,7 @@
 </head>
 
 <body>
-    <div id="loader">
+    {{-- <div id="loader">
         <span id="text">
             <img src="{{asset('/assets/img/logo_footer.png')}}" alt="logo_footer.png" width="100">
         </span>
@@ -100,25 +212,40 @@
         <div id="bar">
             <div class="progress"></div>
         </div>
+    </div> --}}
+    <div id="loader">
+        <div id="background"></div>
+        <div id="logocontainer" onclick=fill()>
+            <div id="pelogo"><img src="{{asset('/assets/img/logo_footer.png')}}" alt="favicon.png" width="100"></div>
+            <div class="loader" style="left:2vh; top:0; height:2vh; width:0; animation:slide1 1s linear forwards infinite">
+            </div>
+            <div class="loader"
+                style="right:0; top:2vh; width:2vh; height:0; animation:slide2 1s linear forwards infinite; animation-delay:0.5s">
+            </div>
+            <div class="loader"
+                style="right:2vh; bottom:0; height:2vh; width:0; animation:slide3 1s linear forwards infinite"></div>
+            <div class="loader"
+                style="left:0; bottom:2vh; width:2vh; height:0; animation:slide4 1s linear forwards infinite; animation-delay:0.5s">
+            </div>
+        </div>
     </div>
-
     {{-- <div class="music-section">
     </div> --}}
-    <div class="tooltip-container">
+    <div class="tooltip-container d-none">
         <img src="{{asset('/assets/img/music.png')}}" alt="music" class="music-section" id="music-icon">
         <div class="tooltip" id="tooltip" style="opacity: 1; visibility: hidden;">Feel lonely? Please play this music
         </div>
     </div>
 
     <a target="_blank" href="https://wa.me/62811140172?text=Halo%2C+Saya+ingin+berkonsultasi+mengenai+bisnis+Saya."
-        class="wa-button" style="display: inline-block;"><img src="{{asset('/assets/img/whatsapp.png')}}" alt=""
+        class="wa-button" style="display: hidden;"><img src="{{asset('/assets/img/whatsapp.png')}}" alt=""
             width="55"></a>
     <audio id="bg-music" autoplay>
         <source src="{{ asset('assets/music/bg_music.mp3') }}" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
-    <div class="content">
+    <div class="content d-none">
         @include('layouts.header')
         @include('sections.about-services')
 
@@ -140,7 +267,7 @@
 
         @include('sections.contact-us')
 
-        <div class="container-flue" style="background-color: #1D1D1D; padding-top: 40px;" id="page-content">
+        <div class="container-fluid" style="background-color: #1D1D1D; padding-top: 40px;" id="page-content">
             <div class="container text-center">
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-md-12">
@@ -166,7 +293,8 @@
                             Transforming the Food & Beverage Industry with Creativity and Innovation, we Helping For F&B
                             Businnes
                         </p>
-                        <div class="text-white icon-footer mb-5 mt-5">
+                        <div class="text-white icon-footer mb-5 mt-5"
+                            style="display: flex;justify-content: center;width: 100%;">
 
                             {{-- INSTAGRAM --}}
                             <a href="https://www.instagram.com/libbre_creative/" target="_blank" rel="noreferrer">
@@ -224,142 +352,17 @@
     <script src="{{asset('assets/js/sweetalert2.min.js')}}"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const loader = document.getElementById('loader');
-            const percent = document.getElementById('percent');
-            const progress = document.querySelector('#bar .progress');
-            const content = document.querySelector('.content');
-            document.body.style.overflow = "hidden";
+        var full=false;
+
+        function fill(){
+            full=!full;
+            document.getElementById("logocontainer").style.backgroundColor=full?"#3ebffa":"transparent";
+        }
+        $(document).ready(function () {
             function simulateLoading() {
-                let loaded = 0;
-                const interval = setInterval(() => {
-                    loaded += Math.random() * 10; // Random increment to simulate loading progress
-                    percent.textContent = `${Math.floor(loaded)}%`;
-                    progress.style.width = `${loaded}%`;
-                    if (loaded >= 100) {
-                        clearInterval(interval);
-                        $("#team-carousel").owlCarousel({
-                            loop:true,
-                            margin:20,
-                            nav:true,
-                            center: true,
-                            dots: true,
-                            pagination: true,
-                            navigation: true,
-                            responsive:{
-                                0:{
-                                    items:1
-                                },
-                                600:{
-                                    items:2
-                                },
-                                1000:{
-                                    items:3
-                                }
-                            }
-                        })
-                        $("#serviceCarousel").owlCarousel({
-                            loop:true,
-                            margin:20,
-                            nav:true,
-                            center: true,
-                            dots: true,
-                            pagination: true,
-                            navigation: true,
-                            responsive:{
-                                0:{
-                                    items:1
-                                },
-                                600:{
-                                    items:2
-                                },
-                                1000:{
-                                    items:3
-                                }
-                            }
-                        });
-                        $("#portfolioServices").owlCarousel({
-                            loop:true,
-                            margin:20,
-                            nav:true,
-                            dots: true,
-                            center: true,
-                            pagination: true,
-                            navigation: true,
-                            responsive:{
-                                0:{
-                                    items:1
-                                },
-                                600:{
-                                    items:2
-                                },
-                                1000:{
-                                    items:3
-                                }
-                            }
-                        });
-                        $("#comprehensiveService").owlCarousel({
-                            loop:true,
-                            margin:20,
-                            nav:true,
-                            dots: true,
-                            responsive:{
-                                0:{
-                                    items:1
-                                },
-                                600:{
-                                    items:1
-                                },
-                                1000:{
-                                    items:1
-                                }
-                            }
-                        });
-                        $("#teamCarousel").owlCarousel({
-                            loop: true,
-                            margin: 10,
-                            nav: true,
-                            dots: true,
-                            autoplay: true,
-                            autoplayTimeout: 1000,
-                            autoplayHoverPause: true,
-                            responsive:{
-                                0:{
-                                    items:1
-                                },
-                                300: {
-                                    items: 1
-                                },
-                                400: {
-                                    items: 1
-                                },
-                                500:{
-                                    items:2
-                                },
-                                600:{
-                                    items:2
-                                },
-                                700: {
-                                    items: 3
-                                },
-                                1000:{
-                                    items:4
-                                }
-                            }
-                        });
-                        var elements = $('div.tithome div').length;
-
-                        for(var i=0;i < elements; i++){
-                            $(".tithome").clone().prependTo( ".scorri" );
-                        };
-
-                        var liEle = [];
-                        var liEle = $(".tithome div");
-                        loader.style.display = 'none'; // Hide loader after completion
-                        content.classList.add('loaded'); // Trigger content animation
-                        document.body.style.overflow = "unset"; // Restore overflow once loaded
-                    }
-                }, 100); // Update every 100ms
+                $("#loader").addClass('d-none');
+                $(".content").removeClass('d-none');
+                $(".content").css('opacity', '1');
             }
 
             simulateLoading();
