@@ -74,16 +74,6 @@
             background: #fff;
         }
 
-        .content {
-            opacity: 0;
-            /* transition: opacity 1s ease, transform 1s ease; */
-        }
-
-        .content.loaded {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         .icon-footer {
             width: 30px;
             margin-bottom: 10px;
@@ -237,7 +227,7 @@
         Your browser does not support the audio element.
     </audio>
 
-    <div class="content" style="opacity: 0;">
+    <div class="content d-none">
         @include('layouts.header')
         @include('sections.about-services')
 
@@ -495,7 +485,8 @@
             marquee();
             setInterval(() => {
                 $("#loader").addClass('d-none');
-                $(".content").css('opacity', '1');
+                $(".content").removeClass('d-none');
+                // $(".content").css('opacity', '1');
                 $(".tooltip-container").removeClass('d-none');
                 $(".wa-button").css('display', 'inline-block');
             }, 3000);
