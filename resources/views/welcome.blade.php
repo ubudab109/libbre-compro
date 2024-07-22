@@ -194,7 +194,7 @@
 </head>
 
 <body>
-    <div id="loader">
+    {{-- <div id="loader">
         <div id="background"></div>
         <div id="logocontainer">
             <div id="pelogo"><img src="{{asset('/assets/img/logo_footer.png')}}" alt="favicon.png" width="100"></div>
@@ -210,7 +210,7 @@
                 style="left:0; bottom:2vh; width:2vh; height:0; animation:slide4 1s linear forwards infinite; animation-delay:0.5s">
             </div>
         </div>
-    </div>
+    </div> --}}
     {{-- <div class="music-section">
     </div> --}}
     <div class="tooltip-container d-none">
@@ -227,7 +227,7 @@
         Your browser does not support the audio element.
     </audio>
 
-    <div class="content d-none">
+    <div class="content">
         @include('layouts.header')
         @include('sections.about-services')
 
@@ -483,13 +483,13 @@
                 }
             });
             marquee();
-            setInterval(() => {
-                $("#loader").addClass('d-none');
-                $(".content").removeClass('d-none');
-                // $(".content").css('opacity', '1');
-                $(".tooltip-container").removeClass('d-none');
-                $(".wa-button").css('display', 'inline-block');
-            }, 3000);
+            // setInterval(() => {
+            //     $("#loader").addClass('d-none');
+            //     $(".content").removeClass('d-none');
+            //     // $(".content").css('opacity', '1');
+            //     $(".tooltip-container").removeClass('d-none');
+            //     $(".wa-button").css('display', 'inline-block');
+            // }, 3000);
         }
         simulateLoading();
         marquee();
