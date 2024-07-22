@@ -23,9 +23,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="{{asset('/assets/lib/animate/animate.min.css')}}" rel="stylesheet">
-    <link href="{{asset('/assets/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
-    <link href="{{asset('/assets/lib/owlcarousel/assets/owl.theme.default.min.css')}}" rel="stylesheet">
+    {{-- <link href="{{asset('/assets/lib/animate/animate.min.css')}}" rel="stylesheet"> --}}
+    
 
     <!-- Template Main CSS File -->
     <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -145,6 +144,8 @@
             }
         }
     </style>
+    <link href="{{asset('/assets/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+    <link href="{{asset('/assets/lib/owlcarousel/assets/owl.theme.default.min.css')}}" rel="stylesheet">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-H5PRL106R3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
