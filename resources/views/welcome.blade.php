@@ -156,6 +156,8 @@
         .content.loaded {
             opacity: 1;
             display: contents;
+            transform: translateY(0);
+
         }
 
         /*Pretty complex animation, so each side needs its own @keyframes.*/
