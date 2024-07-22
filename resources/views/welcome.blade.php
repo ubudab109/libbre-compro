@@ -332,48 +332,8 @@
     <!-- Template Javascript -->
     <script src="{{asset('assets/js/main.js')}}"></script>
     <script src="{{asset('assets/js/sweetalert2.min.js')}}"></script>
-
     <script>
-        function marquee() {
-            var $scorri = $(".scorri");
-            var $tithome = $(".tithome");
-            var itemWidth = $tithome.outerWidth(true); // Includes padding and margin
-            
-            // Clone elements initially
-            for (var i = 0; i < 2; i++) { // Adjust number of clones if needed
-                $tithome.clone().appendTo($scorri);
-            }
-
-            // Function to remove elements that have gone off-screen
-            function removeOffScreenElements() {
-                var scrollLeft = $scorri.scrollLeft();
-                var elements = $scorri.find(".tithome");
-                
-                elements.each(function() {
-                    var offsetLeft = $(this).offset().left;
-                    if (offsetLeft + $(this).outerWidth() < scrollLeft) {
-                        $(this).remove();
-                    }
-                });
-
-                // Re-clone the elements if needed
-                var containerWidth = $scorri.width();
-                var totalWidth = $scorri.find(".tithome").length * itemWidth;
-                
-                if (totalWidth < containerWidth * 2) {
-                    $tithome.clone().appendTo($scorri);
-                }
-            }
-
-            // Check for off-screen elements on scroll
-            $scorri.on('scroll', removeOffScreenElements);
-
-            // Initial call to ensure elements are correct on load
-            removeOffScreenElements();
-        }
-    
-        function simulateLoading() {
-            $("#team-carousel").owlCarousel({
+        $("#team-carousel").owlCarousel({
                 loop:true,
                 margin:20,
                 nav:true,
@@ -482,6 +442,48 @@
                     }
                 }
             });
+    </script>
+    <script>
+        function marquee() {
+            var $scorri = $(".scorri");
+            var $tithome = $(".tithome");
+            var itemWidth = $tithome.outerWidth(true); // Includes padding and margin
+            
+            // Clone elements initially
+            for (var i = 0; i < 2; i++) { // Adjust number of clones if needed
+                $tithome.clone().appendTo($scorri);
+            }
+
+            // Function to remove elements that have gone off-screen
+            function removeOffScreenElements() {
+                var scrollLeft = $scorri.scrollLeft();
+                var elements = $scorri.find(".tithome");
+                
+                elements.each(function() {
+                    var offsetLeft = $(this).offset().left;
+                    if (offsetLeft + $(this).outerWidth() < scrollLeft) {
+                        $(this).remove();
+                    }
+                });
+
+                // Re-clone the elements if needed
+                var containerWidth = $scorri.width();
+                var totalWidth = $scorri.find(".tithome").length * itemWidth;
+                
+                if (totalWidth < containerWidth * 2) {
+                    $tithome.clone().appendTo($scorri);
+                }
+            }
+
+            // Check for off-screen elements on scroll
+            $scorri.on('scroll', removeOffScreenElements);
+
+            // Initial call to ensure elements are correct on load
+            removeOffScreenElements();
+        }
+    
+        function simulateLoading() {
+            
             marquee();
             // setInterval(() => {
             //     $("#loader").addClass('d-none');
