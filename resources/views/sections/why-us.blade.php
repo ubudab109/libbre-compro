@@ -13,11 +13,13 @@
                     @lang('landing.why_us.desc')
                 </p>
 
-                <ul class="list-check" style="text-align: left;">
-                    <li class="text-white font-weight-200">@lang('landing.why_us.list.one')</li>
-                    <li class="text-white font-weight-200">@lang('landing.why_us.list.two')</li>
-                    <li class="text-white font-weight-200">@lang('landing.why_us.list.three')</li>
-                </ul>
+                <div class="d-flex justify-md-center">
+                    <ul class="list-check" style="text-align: left;">
+                        <li class="text-white font-weight-200">@lang('landing.why_us.list.one')</li>
+                        <li class="text-white font-weight-200">@lang('landing.why_us.list.two')</li>
+                        <li class="text-white font-weight-200">@lang('landing.why_us.list.three')</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>

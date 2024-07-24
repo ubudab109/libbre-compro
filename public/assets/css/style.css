@@ -674,6 +674,9 @@ section .row {
 }
 
 @media (max-width: 768px) {
+    .justify-md-center {
+        justify-content: center;
+    }
     .row-organize {
         flex-direction: column;
     }
