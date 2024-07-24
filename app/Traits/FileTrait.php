@@ -11,15 +11,22 @@ trait FileTrait
 {
     public static function storeFile(string $path, UploadedFile $file)
     {
-        $extension = $file->getClientOriginalExtension();
-        $imageName = preg_replace('/(0)\.(\d+) (\d+)/', '$3$1$2', microtime()) . '.' . $extension;
+        // Get the original file name
+        $originalFileName = $file->getClientOriginalName();
+        
+        // Determine the file system configuration
         $fileSystem = config('filesystems.default');
-        Storage::disk($fileSystem)->put("{$path}{$imageName}", file_get_contents($file->getRealPath()));
+        
+        // Save the file to the specified path with its original name
+        Storage::disk($fileSystem)->put("{$path}{$originalFileName}", file_get_contents($file->getRealPath()));
+        
+        // Construct the file URL based on the file system
         if ($fileSystem == 'local' || $fileSystem == 'public') {
-            $fileUrl = URL::to("storage/{$path}{$imageName}");
+            $fileUrl = URL::to("storage/{$path}{$originalFileName}");
         } else {
-            $fileUrl = Storage::url($imageName);
+            $fileUrl = Storage::url("{$path}{$originalFileName}");
         }
+        
         return $fileUrl;
     }
 
