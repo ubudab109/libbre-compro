@@ -28,7 +28,7 @@
                 @if ($compro->value)
                     <button data-bs-toggle="modal" data-bs-target="#modalFileSend"
                         class="btn btn-primary-custom pt-2 px-5 me-3 animated slideInRight mb-3">
-                        <svg width="40px" height="30px" viewBox="0 2 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        <svg width="30" height="20" viewBox="0 2 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
                             stroke="#ffffff">
 
                             <g id="SVGRepo_bgCarrier" stroke-width="0" />
