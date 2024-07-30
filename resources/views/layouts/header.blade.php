@@ -45,8 +45,7 @@
                         @lang('landing.header.creative')
                     </h1>
                     <p class="text-white paragraph-title mb-4">
-                        "Transforming the Food & Beverage Industry
-                        with Creativity and Innovation, we Helping For F&B Businnes"
+                        "Transforming the Food & Beverage industry with Creativity and Innovation for F&B Business"
                     </p>
                 </div>
                 <div class="col-12 text-center img-hero-banner">

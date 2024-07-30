@@ -233,8 +233,7 @@
                             </div>
                         </div>
                         <p class="text-white font-weight-300 my-3">
-                            Transforming the Food & Beverage Industry with Creativity and Innovation, we Helping For F&B
-                            Businnes
+                            Transforming the Food & Beverage industry with Creativity and Innovation for F&B Business
                         </p>
                         <div class="text-white icon-footer mb-5 mt-5"
                             style="display: flex;justify-content: center;width: 100%;">
